@@ -26,8 +26,8 @@ export default function LogsPage() {
         </p>
       </header>
 
-      {/* Logs Interactive Search & Filter View */}
-      <section aria-label="Media logs archive">
+      {/* Consumptions Interactive Search & Filter View */}
+      <section aria-label="Consumptions archive">
         <LogsClient initialEntries={entries} />
       </section>
     </div>

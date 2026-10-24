@@ -1,4 +1,4 @@
-# Harry — Engineering Portfolio & Cultural Media Log
+# Harry — Engineering Portfolio, Productions & Consumptions
 
 [![Next.js 15](https://img.shields.io/badge/Next.js-15.5-black?style=flat&logo=next.js)](https://nextjs.org/)
 [![React 19](https://img.shields.io/badge/React-19-blue?style=flat&logo=react)](https://react.dev/)
@@ -6,7 +6,7 @@
 [![Tailwind CSS v4](https://img.shields.io/badge/Tailwind-v4.1-38BDF8?style=flat&logo=tailwindcss)](https://tailwindcss.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-emerald.svg)](LICENSE)
 
-A high-performance personal engineering portfolio, architectural case study registry, and curated cultural index (film, games, music). Built with a "live system" telemetry HUD, dynamic theme-aware SVG favicon, accessible navigation, and strict data/presentation decoupling.
+A high-performance personal engineering portfolio, architectural productions registry, and curated cultural consumptions (film, games, music). Built with a "live system" telemetry HUD, custom Toucan favicon, accessible navigation, and strict data/presentation decoupling.
 
 ---
 

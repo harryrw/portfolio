@@ -21,12 +21,16 @@ export const metadata: Metadata = {
     'TypeScript',
     'Tailwind CSS',
     'Architecture',
-    'Media Log',
+    'Productions',
+    'Consumptions',
   ],
   icons: {
-    icon: [{ url: '/icon.svg', type: 'image/svg+xml' }],
+    icon: [
+      { url: '/icon.svg', type: 'image/svg+xml' },
+      { url: '/toucan.png', type: 'image/png' },
+    ],
     shortcut: '/icon.svg',
-    apple: '/icon.svg',
+    apple: '/toucan.png',
   },
   openGraph: {
     type: 'website',
@@ -34,7 +38,7 @@ export const metadata: Metadata = {
     url: siteConfig.siteUrl,
     title: siteConfig.title,
     description: siteConfig.description,
-    siteName: `${siteConfig.name} Portfolio & System Logs`,
+    siteName: `${siteConfig.name} Portfolio, Productions & Consumptions`,
     images: [
       {
         url: '/icon.svg',

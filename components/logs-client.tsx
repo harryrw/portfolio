@@ -73,7 +73,7 @@ export function LogsClient({ initialEntries }: LogsClientProps) {
         {/* Category Filter Pills */}
         <div
           role="radiogroup"
-          aria-label="Filter logs by media type"
+          aria-label="Filter consumptions by media type"
           className="flex flex-wrap items-center gap-1.5"
         >
           {filterTabs.map((tab) => {

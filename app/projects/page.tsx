@@ -26,8 +26,8 @@ export default function ProjectsPage() {
         </p>
       </header>
 
-      {/* Projects Grid */}
-      <section aria-label="Projects catalog">
+      {/* Productions Grid */}
+      <section aria-label="Productions catalog">
         <ul role="list" className="grid gap-6 md:grid-cols-2">
           {projects.map((project) => (
             <ProjectCard key={project.slug} project={project} />

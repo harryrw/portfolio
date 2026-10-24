@@ -86,9 +86,9 @@ export interface SiteConfig {
 export const siteConfig: SiteConfig = {
   name: 'Harry',
   role: 'Software Engineer',
-  title: 'Harry — Software Engineering & Media Logs',
+  title: 'Harry — Software Engineering & Consumptions',
   description:
-    'Personal engineering portfolio, architectural case studies, and curated cultural logs across film, games, and music.',
+    'Personal engineering portfolio, architectural case studies, and curated consumptions across film, games, and music.',
   siteUrl: 'https://portfoliohrw-xi.vercel.app',
   twitterHandle: '@harryrw',
   skipLinkLabel: 'Skip to main content',
@@ -106,54 +106,54 @@ export const siteConfig: SiteConfig = {
   },
   navItems: [
     { label: 'Home', href: '/' },
-    { label: 'Projects', href: '/projects' },
-    { label: 'Logs', href: '/logs' },
+    { label: 'Productions', href: '/projects' },
+    { label: 'Consumptions', href: '/logs' },
     { label: 'About', href: '/about' },
   ],
   hero: {
     eyebrow: 'Portfolio & Cultural Index',
-    heading: 'Systems engineering, architectural notes, and media logs.',
+    heading: 'Systems engineering, architectural notes, and consumptions.',
     summary:
       'Exploring distributed systems, resilient frontend architecture, and the films, games, and records shaping how I think about craft.',
     primaryCta: {
-      label: 'Explore Projects',
+      label: 'Explore Productions',
       href: '/projects',
     },
     secondaryCta: {
-      label: 'Browse Media Logs',
+      label: 'Browse Consumptions',
       href: '/logs',
     },
   },
   sections: {
-    projectsHeading: 'Featured Engineering Projects',
+    projectsHeading: 'Featured Productions',
     projectsSubheading: 'Selected case studies in distributed architecture and developer tooling.',
-    viewAllProjectsLabel: 'All projects',
-    logsHeading: 'Recent Media Logs',
+    viewAllProjectsLabel: 'All productions',
+    logsHeading: 'Recent Consumptions',
     logsSubheading: 'Notes on watching, playing, and listening.',
-    viewAllLogsLabel: 'All logs',
+    viewAllLogsLabel: 'All consumptions',
     featuredBadge: 'Featured',
     recommendedBadge: 'Recommended',
   },
   pages: {
     projects: {
-      title: 'Projects',
+      title: 'Productions',
       eyebrow: 'Engineering Portfolio',
-      heading: 'Systems & Architectural Case Studies',
+      heading: 'Systems & Architectural Productions',
       description:
-        'A collection of production and exploratory projects focusing on high-throughput distributed event streaming, real-time edge telemetry, and enterprise developer platforms.',
+        'A collection of production and exploratory systems focusing on high-throughput distributed event streaming, real-time edge telemetry, and enterprise developer platforms.',
     },
     logs: {
-      title: 'Media Logs',
+      title: 'Consumptions',
       eyebrow: 'Cultural Archive',
       heading: 'Watching, Playing & Listening',
       description:
-        'Personal catalog of films, games, and music logs, featuring ratings, analytical impressions, and creative takeaways.',
-      searchPlaceholder: 'Search logs by title, director, artist, or tags...',
+        'Personal catalog of films, games, and music consumptions, featuring ratings, analytical impressions, and creative takeaways.',
+      searchPlaceholder: 'Search consumptions by title, director, artist, or tags...',
       allTab: 'All Media',
       filmsTab: 'Films',
       gamesTab: 'Games',
       musicTab: 'Music',
-      noResultsMessage: 'No media logs found matching your filter criteria.',
+      noResultsMessage: 'No consumptions found matching your filter criteria.',
     },
     about: {
       title: 'About & Resume',

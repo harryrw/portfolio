@@ -70,14 +70,14 @@ export default function HomePage() {
                 <div className="flex items-center justify-between rounded-lg bg-white/90 px-3 py-2 text-zinc-700 shadow-2xs dark:bg-zinc-900/90 dark:text-zinc-300">
                   <span className="inline-flex items-center gap-1.5">
                     <Layers className="h-3.5 w-3.5 text-emerald-500" />
-                    <span>Case Studies</span>
+                    <span>Productions</span>
                   </span>
                   <span className="font-bold text-emerald-600 dark:text-emerald-400">
                     0{projects.length}
                   </span>
                 </div>
                 <div className="flex items-center justify-between rounded-lg bg-white/90 px-3 py-2 text-zinc-700 shadow-2xs dark:bg-zinc-900/90 dark:text-zinc-300">
-                  <span>Media Archive</span>
+                  <span>Consumptions</span>
                   <span className="font-bold text-emerald-600 dark:text-emerald-400">
                     0{mediaEntries.length}
                   </span>
@@ -88,7 +88,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Featured Projects Section */}
+      {/* Featured Productions Section */}
       <section className="animate-fade-up delay-150 space-y-6">
         <div className="flex flex-col justify-between gap-2 sm:flex-row sm:items-end">
           <div>
@@ -115,7 +115,7 @@ export default function HomePage() {
         </ul>
       </section>
 
-      {/* Media Log Section */}
+      {/* Consumptions Section */}
       <section className="animate-fade-up delay-225 space-y-6">
         <div className="flex flex-col justify-between gap-2 sm:flex-row sm:items-end">
           <div>
