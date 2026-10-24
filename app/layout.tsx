@@ -5,10 +5,51 @@ import { Footer } from '@/components/footer';
 import { siteConfig } from '@/data/site';
 
 export const metadata: Metadata = {
-  title: siteConfig.title,
+  metadataBase: new URL(siteConfig.siteUrl),
+  title: {
+    default: siteConfig.title,
+    template: `%s | ${siteConfig.name}`,
+  },
   description: siteConfig.description,
+  applicationName: siteConfig.title,
+  authors: [{ name: siteConfig.name, url: siteConfig.siteUrl }],
+  creator: siteConfig.name,
+  keywords: [
+    'Software Engineering',
+    'Distributed Systems',
+    'Next.js',
+    'TypeScript',
+    'Tailwind CSS',
+    'Architecture',
+    'Media Log',
+  ],
   icons: {
-    icon: '/icon.svg',
+    icon: [{ url: '/icon.svg', type: 'image/svg+xml' }],
+    shortcut: '/icon.svg',
+    apple: '/icon.svg',
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: siteConfig.siteUrl,
+    title: siteConfig.title,
+    description: siteConfig.description,
+    siteName: `${siteConfig.name} Portfolio & System Logs`,
+    images: [
+      {
+        url: '/icon.svg',
+        width: 1200,
+        height: 630,
+        alt: `${siteConfig.title} link preview`,
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: siteConfig.title,
+    description: siteConfig.description,
+    creator: siteConfig.twitterHandle,
+    images: ['/icon.svg'],
   },
 };
 

@@ -8,6 +8,8 @@ export interface SiteConfig {
   role: string;
   title: string;
   description: string;
+  siteUrl: string;
+  twitterHandle: string;
   skipLinkLabel: string;
   navAriaLabel: string;
   mobileMenuOpenLabel: string;
@@ -15,6 +17,14 @@ export interface SiteConfig {
   themeToggleLightLabel: string;
   themeToggleDarkLabel: string;
   navItems: NavItem[];
+  telemetry: {
+    statusLabel: string;
+    httpStatus: string;
+    vibeStatus: string;
+    focusStatus: string;
+    latency: string;
+    region: string;
+  };
   hero: {
     eyebrow: string;
     heading: string;
@@ -50,12 +60,22 @@ export const siteConfig: SiteConfig = {
   title: 'Harry — Software Engineering & Media Logs',
   description:
     'Personal engineering portfolio, architectural case studies, and curated cultural logs across film, games, and music.',
+  siteUrl: 'https://portfolio.harryrw.dev',
+  twitterHandle: '@harryrw',
   skipLinkLabel: 'Skip to main content',
   navAriaLabel: 'Primary',
   mobileMenuOpenLabel: 'Open navigation menu',
   mobileMenuCloseLabel: 'Close navigation menu',
   themeToggleLightLabel: 'Switch to light theme',
   themeToggleDarkLabel: 'Switch to dark theme',
+  telemetry: {
+    statusLabel: 'Status: Online',
+    httpStatus: 'HTTP: 200 OK',
+    vibeStatus: 'Vibe: Building & Listening',
+    focusStatus: 'Focus: Active',
+    latency: '14ms',
+    region: 'SYD-1',
+  },
   navItems: [
     { label: 'Home', href: '/' },
     { label: 'Projects', href: '/projects' },

@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { getFeaturedProjects, getMediaEntries } from '@/lib/data';
 import { siteConfig } from '@/data/site';
+import { StatusBanner } from '@/components/StatusBanner';
 import { ProjectCard } from '@/components/project-card';
 import { MediaCard } from '@/components/media-card';
 
@@ -10,7 +11,10 @@ export default function HomePage() {
   const mediaEntries = getMediaEntries();
 
   return (
-    <div className="space-y-16">
+    <div className="space-y-12 sm:space-y-16">
+      {/* Live System Telemetry HUD */}
+      <StatusBanner />
+
       {/* Hero Section */}
       <section className="rounded-2xl border border-zinc-200 bg-white p-6 shadow-xs transition-colors dark:border-zinc-800 dark:bg-zinc-900 sm:p-10">
         <p className="text-xs font-semibold tracking-wider text-emerald-600 uppercase dark:text-emerald-400">
