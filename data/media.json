@@ -30,7 +30,7 @@
     "reviewTitle": "Brutalist cosmic horror spills into a warped Manhattan",
     "reviewBody": "Shifting perspective to Dylan Faden outside the Oldest House expands Remedy's surreal worldbuilding into an open-ended paranormal playground. The fluid aerial traversal, reality-bending telekinesis, and eerie sound design deliver an unforgettable atmosphere.",
     "coverImage": "/images/media/control-resonant.jpg",
-    "youtubeUrl": "https://www.youtube.com/results?search_query=CONTROL+Resonant+Announcement+Trailer",
+    "youtubeUrl": "https://www.youtube.com/watch?v=gZgm54PBZt4",
     "youtubeLabel": "Watch Announcement Trailer",
     "tags": ["Sci-Fi", "RemedyVerse", "Action-RPG", "Atmospheric"]
   },
@@ -48,26 +48,26 @@
     "reviewTitle": "High-octane arcade repulsorcraft destruction across the Outer Rim",
     "reviewBody": "A thrilling revival of underground sci-fi motorsport. Blending rogue-lite run structures with aggressive vehicle shunting and modular repulsorcraft tuning, each high-speed canyon course rewards split-second reflexes and ruthless track tactics.",
     "coverImage": "/images/media/galactic-racer.jpg",
-    "youtubeUrl": "https://www.youtube.com/results?search_query=Star+Wars+Galactic+Racer+Reveal+Trailer",
+    "youtubeUrl": "https://www.youtube.com/watch?v=M9_HL6uHzTY",
     "youtubeLabel": "Watch Reveal Trailer",
     "tags": ["Sci-Fi", "Racing", "Arcade", "Star Wars"]
   },
   {
-    "id": "listen-romance-fontaines-dc-2024",
-    "title": "Romance",
+    "id": "listen-dopamine-chamber-fontaines-dc-2026",
+    "title": "Dopamine Chamber",
     "category": "listening",
     "format": "Album",
     "artist": "Fontaines D.C.",
-    "standoutTrack": "Starburster",
+    "standoutTrack": "Six Shot Morning",
     "loggedDate": "2026-10-23",
-    "releaseYear": 2024,
+    "releaseYear": 2026,
     "rating": 5,
     "recommended": true,
-    "reviewTitle": "Dystopian swagger, heavy beats, and cinematic shoegaze guitars",
-    "reviewBody": "A thrilling transformation from James Ford's razor-sharp production to Grian Chatten's breathless vocal urgency on Starburster and Favourite. Romance fuses 90s alternative swagger with neon cyberpunk alienation and timeless melody.",
+    "reviewTitle": "Atmospheric darkwave textures, dream pop, and gritty urgent rock",
+    "reviewBody": "Produced by James Ford, Dopamine Chamber pushes Fontaines D.C. into darker, nocturnal terrain. Led by the pulsating tension of Six Shot Morning and Marianne, the record seamlessly fuses driving drum machines, ethereal synthesizers, and Grian Chatten's sharp poetic bite.",
     "coverImage": "/images/media/fontaines.jpg",
-    "youtubeUrl": "https://www.youtube.com/watch?v=wkK5qTohwRc",
-    "youtubeLabel": "Listen: Starburster (Official Video)",
-    "tags": ["Post-Punk", "Alternative Rock", "Shoegaze", "Album of the Year"]
+    "youtubeUrl": "https://www.youtube.com/watch?v=00krktruwsM",
+    "youtubeLabel": "Listen: Six Shot Morning (Official Video)",
+    "tags": ["Darkwave", "Alternative Rock", "Dream Pop", "Album of the Year"]
   }
 ]
