@@ -56,7 +56,6 @@ const THEMES: Record<TimeOfDay, LandscapeTheme> = {
     mountainBack: '#1e1b4b',
     mountainFront: '#0f172a',
     ground: '#090d16',
-    stars: true,
   },
 };
 
@@ -88,14 +87,6 @@ export function DynamicAvatar() {
           <div className={`absolute rounded-full transition-all duration-700 ${current.sunPos} ${current.sunColor}`} />
 
           <svg viewBox="0 0 200 200" className="absolute inset-0 h-full w-full pointer-events-none" preserveAspectRatio="none">
-            {current.stars && (
-              <g fill="#ffffff" opacity="0.65">
-                <circle cx="35" cy="45" r="1.5" />
-                <circle cx="160" cy="50" r="1.2" />
-                <circle cx="140" cy="85" r="1" />
-                <circle cx="65" cy="75" r="1.5" />
-              </g>
-            )}
             <path d="M-10 160 Q 50 110, 110 145 T 210 150 L 210 200 L -10 200 Z" fill={current.mountainBack} opacity="0.75" />
             <path d="M-10 175 Q 80 140, 160 165 T 220 180 L 220 200 L -10 200 Z" fill={current.mountainFront} opacity="0.9" />
             <rect x="0" y="185" width="200" height="20" fill={current.ground} />
