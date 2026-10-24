@@ -79,7 +79,6 @@ export interface SiteConfig {
     };
   };
   footer: {
-    copyright: string;
     builtWith: string;
   };
 }
@@ -170,7 +169,6 @@ export const siteConfig: SiteConfig = {
     },
   },
   footer: {
-    copyright: '© 2026 Harry. All rights reserved.',
-    builtWith: 'Built with Next.js App Router, TypeScript & Tailwind CSS.',
+    builtWith: 'Built with love',
   },
 };
