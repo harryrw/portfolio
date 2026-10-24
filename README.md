@@ -12,7 +12,7 @@ A high-performance personal engineering portfolio, architectural case study regi
 
 ## 🌐 Live Production Deployment
 
-- **Production URL**: [https://portfolio.harryrw.dev](https://portfolio.harryrw.dev)
+- **Production URL**: [https://portfoliohrw-xi.vercel.app](https://portfoliohrw-xi.vercel.app)
 - **Source Repository**: [https://github.com/harryrw/portfolio](https://github.com/harryrw/portfolio)
 
 ---

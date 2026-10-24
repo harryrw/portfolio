@@ -50,11 +50,11 @@ export function StatusBanner() {
           </span>
         </div>
 
-        {/* Center / Right: Live Metrics & Visualizer */}
+        {/* Center / Right: Live Metrics & Waveform */}
         <div className="flex flex-wrap items-center gap-2">
           {/* Waveform Telemetry Heartbeat */}
           <div
-            className="hidden items-center gap-1.5 rounded-md border border-zinc-200 bg-zinc-50 px-2 py-0.5 text-zinc-600 dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-300 md:flex"
+            className="flex items-center gap-1.5 rounded-md border border-zinc-200 bg-zinc-50 px-2 py-0.5 text-zinc-600 dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-300"
             title="Live telemetry waveform"
           >
             <Activity className="h-3 w-3 text-emerald-600 dark:text-emerald-400" aria-hidden="true" />
@@ -88,11 +88,6 @@ export function StatusBanner() {
           <span className="inline-flex items-center gap-1 rounded-md border border-emerald-200/80 bg-emerald-50 px-2 py-0.5 font-mono text-[11px] font-medium text-emerald-800 dark:border-emerald-900/60 dark:bg-emerald-950/60 dark:text-emerald-300">
             <Wifi className="h-2.5 w-2.5" aria-hidden="true" />
             <span>{siteConfig.telemetry.httpStatus}</span>
-          </span>
-
-          {/* Vibe / Focus Badge */}
-          <span className="rounded-md border border-zinc-200 bg-zinc-100 px-2 py-0.5 font-medium text-zinc-700 dark:border-zinc-800 dark:bg-zinc-800 dark:text-zinc-300">
-            {siteConfig.telemetry.vibeStatus}
           </span>
         </div>
       </div>
