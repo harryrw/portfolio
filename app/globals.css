@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  color-scheme: light dark;
+
+  &:has(> head > meta[name="color-scheme"][content="dark"]) {
+    color-scheme: dark;
+  }
+  &:has(> head > meta[name="color-scheme"][content="light"]) {
+    color-scheme: light;
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    accent-color: #059669;
+  }
+
+  :where(a:any-link, button):focus-visible {
+    outline: 2px solid #059669;
+    outline-offset: 3px;
+  }
+
+  .dark :where(a:any-link, button):focus-visible {
+    outline-color: #34d399;
+  }
+}

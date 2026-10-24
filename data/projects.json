@@ -1,0 +1,62 @@
+[
+  {
+    "slug": "distributed-event-ledger",
+    "title": "Chronos Ledger",
+    "tagline": "High-throughput distributed event streaming and audit log engine with deterministic replay.",
+    "featured": true,
+    "publishedAt": "2026-06-15",
+    "links": {
+      "github": "https://github.com/harryrw/chronos-ledger",
+      "liveDemo": "https://chronos.example.com"
+    },
+    "techStack": [
+      { "name": "TypeScript", "category": "Backend" },
+      { "name": "PostgreSQL", "category": "Database" },
+      { "name": "Next.js", "category": "Frontend" },
+      { "name": "Docker", "category": "DevOps" },
+      { "name": "Event Sourcing", "category": "Architecture" }
+    ],
+    "overview": "Chronos Ledger is an append-only event store designed for financial and operational microservices requiring strict ordering, cryptographic tamper evidence, and sub-50ms query latency across partitioned streams.",
+    "architectureOverview": "Events are ingested through stateless edge workers, sequenced via partitioned write-ahead logs, and asynchronously projected into read-optimized PostgreSQL materialized views.",
+    "takeaways": [
+      {
+        "challenge": "Hot partition contention during burst traffic spikes exceeding 15,000 events per second.",
+        "solution": "Implemented adaptive shard key hashing with bounded in-memory batching, reducing write lock contention by 78%."
+      },
+      {
+        "challenge": "Slow state reconstruction when replaying long-lived aggregate streams.",
+        "solution": "Introduced automated rolling snapshots every 500 events with zero-downtime background compaction."
+      }
+    ]
+  },
+  {
+    "slug": "edge-feature-flag-engine",
+    "title": "Vanguard Flags",
+    "tagline": "Zero-latency feature flag evaluation engine and real-time telemetry control plane.",
+    "featured": true,
+    "publishedAt": "2026-09-02",
+    "links": {
+      "github": "https://github.com/harryrw/vanguard-flags",
+      "liveDemo": "https://vanguard.example.com"
+    },
+    "techStack": [
+      { "name": "React", "category": "Frontend" },
+      { "name": "Node.js", "category": "Backend" },
+      { "name": "Redis", "category": "Database" },
+      { "name": "GitHub Actions", "category": "DevOps" },
+      { "name": "Edge Computing", "category": "Architecture" }
+    ],
+    "overview": "Vanguard Flags enables engineering teams to decouple deployment from release using deterministic percentage rollouts, cohort targeting rules, and instant kill-switches synchronized globally.",
+    "architectureOverview": "Rule definitions are compiled into compact JSON ASTs in the control plane, replicated to Redis edge caches, and streamed to connected SDK clients over Server-Sent Events (SSE).",
+    "takeaways": [
+      {
+        "challenge": "Inconsistent bucketing across web and backend SDKs during gradual percentage rollouts.",
+        "solution": "Standardized on a unified MurmurHash3 specification with shared cross-language conformance test vectors."
+      },
+      {
+        "challenge": "Stale flag rules when network connectivity drops between application nodes and the control plane.",
+        "solution": "Built a local disk-backed fallback snapshot store with exponential backoff reconnection on SSE streams."
+      }
+    ]
+  }
+]

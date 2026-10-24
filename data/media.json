@@ -1,0 +1,49 @@
+[
+  {
+    "id": "watch-aftersun-2022",
+    "title": "Aftersun",
+    "category": "watching",
+    "format": "Film",
+    "director": "Charlotte Wells",
+    "loggedDate": "2026-10-12",
+    "releaseYear": 2022,
+    "rating": 5,
+    "recommended": true,
+    "reviewTitle": "Memory reconstructed through MiniDV camcorder grain",
+    "reviewBody": "An extraordinary debut that captures the fragile gap between how we experienced childhood moments and how we understand our parents decades later. Every frame feels deliberate yet unforced.",
+    "coverImage": "/images/media/aftersun.jpg",
+    "tags": ["Drama", "A24", "Cinematography", "Memory"]
+  },
+  {
+    "id": "play-balatro-2024",
+    "title": "Balatro",
+    "category": "playing",
+    "platform": "PC",
+    "developer": "LocalThunk",
+    "status": "Endless",
+    "loggedDate": "2026-10-18",
+    "releaseYear": 2024,
+    "rating": 5,
+    "recommended": true,
+    "reviewTitle": "A masterclass in emergent systems design and tactile UI feedback",
+    "reviewBody": "Beneath the poker aesthetic lies one of the cleanest multiplicative synergy engines in modern roguelike design. Its CRT shaders, sound cues, and pacing make every hand feel consequential.",
+    "coverImage": "/images/media/balatro.jpg",
+    "tags": ["Roguelike", "Deckbuilder", "Systems Design", "Indie"]
+  },
+  {
+    "id": "listen-in-rainbows-2007",
+    "title": "In Rainbows",
+    "category": "listening",
+    "format": "Album",
+    "artist": "Radiohead",
+    "standoutTrack": "Weird Fishes/Arpeggi",
+    "loggedDate": "2026-10-20",
+    "releaseYear": 2007,
+    "rating": 5,
+    "recommended": true,
+    "reviewTitle": "Warm polyrhythms and timeless production clarity",
+    "reviewBody": "Nearly two decades on, the interlocking guitar arpeggios and crisp drum transients on In Rainbows remain my benchmark for studio warmth and emotional directness.",
+    "coverImage": "/images/media/in-rainbows.jpg",
+    "tags": ["Alternative Rock", "Art Rock", "Production", "Classic"]
+  }
+]
