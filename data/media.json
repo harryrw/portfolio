@@ -12,7 +12,26 @@
     "reviewTitle": "Memory reconstructed through MiniDV camcorder grain",
     "reviewBody": "An extraordinary debut that captures the fragile gap between how we experienced childhood moments and how we understand our parents decades later. Every frame feels deliberate yet unforced.",
     "coverImage": "/images/media/aftersun.jpg",
+    "youtubeUrl": "https://www.youtube.com/watch?v=vXKcWRu8K_U",
+    "youtubeLabel": "Watch Official Trailer",
     "tags": ["Drama", "A24", "Cinematography", "Memory"]
+  },
+  {
+    "id": "watch-severance-2022",
+    "title": "Severance",
+    "category": "watching",
+    "format": "Series",
+    "director": "Ben Stiller & Aoife McArdle",
+    "loggedDate": "2026-10-15",
+    "releaseYear": 2022,
+    "rating": 5,
+    "recommended": true,
+    "reviewTitle": "Brutalist corporate symmetry and clinical tension",
+    "reviewBody": "A masterwork of production design and pacing. The fluorescent corridors of Lumon Industries turn workplace alienation into a gripping sci-fi thriller where every wide-angle frame carries weight.",
+    "coverImage": "/images/media/severance.jpg",
+    "youtubeUrl": "https://www.youtube.com/watch?v=xEQP4VVuyrY",
+    "youtubeLabel": "Watch Official Trailer",
+    "tags": ["Sci-Fi", "Thriller", "Series", "Cinematography"]
   },
   {
     "id": "play-balatro-2024",
@@ -28,6 +47,8 @@
     "reviewTitle": "A masterclass in emergent systems design and tactile UI feedback",
     "reviewBody": "Beneath the poker aesthetic lies one of the cleanest multiplicative synergy engines in modern roguelike design. Its CRT shaders, sound cues, and pacing make every hand feel consequential.",
     "coverImage": "/images/media/balatro.jpg",
+    "youtubeUrl": "https://www.youtube.com/watch?v=VUyP21iQ_-g",
+    "youtubeLabel": "Watch Gameplay Trailer",
     "tags": ["Roguelike", "Deckbuilder", "Systems Design", "Indie"]
   },
   {
@@ -43,7 +64,9 @@
     "recommended": true,
     "reviewTitle": "Warm polyrhythms and timeless production clarity",
     "reviewBody": "Nearly two decades on, the interlocking guitar arpeggios and crisp drum transients on In Rainbows remain my benchmark for studio warmth and emotional directness.",
-    "coverImage": "/images/media/in-rainbows.jpg",
+    "coverImage": "/images/media/in-rainbows.svg",
+    "youtubeUrl": "https://www.youtube.com/watch?v=GoLJJRIWCLU",
+    "youtubeLabel": "Listen: Weird Fishes / Jigsaw",
     "tags": ["Alternative Rock", "Art Rock", "Production", "Classic"]
   }
 ]

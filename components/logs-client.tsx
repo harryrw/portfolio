@@ -102,7 +102,7 @@ export function LogsClient({ initialEntries }: LogsClientProps) {
 
       {/* Filtered Logs Grid or Empty State */}
       {filteredEntries.length > 0 ? (
-        <ul role="list" className="grid gap-6 md:grid-cols-3">
+        <ul role="list" className="grid gap-6 sm:grid-cols-2">
           {filteredEntries.map((entry) => (
             <MediaCard key={entry.id} entry={entry} />
           ))}

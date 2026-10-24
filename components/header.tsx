@@ -18,13 +18,10 @@ export function Header() {
           href="/"
           className="group inline-flex items-center gap-2.5 text-base font-semibold tracking-tight text-zinc-900 transition-colors hover:text-emerald-600 dark:text-zinc-100 dark:hover:text-emerald-400"
         >
-          <span className="flex h-8 w-8 items-center justify-center rounded-lg border border-emerald-200 bg-emerald-50 text-emerald-600 transition-colors group-hover:border-emerald-300 group-hover:bg-emerald-100 dark:border-emerald-800/60 dark:bg-emerald-950/50 dark:text-emerald-400 dark:group-hover:border-emerald-700 dark:group-hover:bg-emerald-900/40">
+          <span className="flex h-8 w-8 items-center justify-center rounded-lg border border-emerald-200 bg-emerald-50 text-emerald-600 transition-transform duration-300 group-hover:scale-105 group-hover:border-emerald-300 group-hover:bg-emerald-100 dark:border-emerald-800/60 dark:bg-emerald-950/50 dark:text-emerald-400 dark:group-hover:border-emerald-700 dark:group-hover:bg-emerald-900/40">
             <Code2 className="h-4 w-4" aria-hidden="true" />
           </span>
           <span>{siteConfig.name}</span>
-          <span className="hidden rounded-full bg-zinc-100 px-2 py-0.5 text-xs font-medium text-zinc-600 dark:bg-zinc-800 dark:text-zinc-400 sm:inline-block">
-            {siteConfig.role}
-          </span>
         </Link>
 
         {/* Desktop Navigation */}

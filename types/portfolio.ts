@@ -23,6 +23,7 @@ export interface Project {
   tagline: string;
   featured: boolean;
   publishedAt: string;
+  previewImage?: string;
   links: {
     github?: string;
     liveDemo?: string;
@@ -50,6 +51,8 @@ export interface BaseMediaEntry {
   reviewTitle?: string;
   reviewBody: string;
   coverImage?: string;
+  youtubeUrl?: string;
+  youtubeLabel?: string;
   tags: string[];
 }
 

@@ -160,7 +160,7 @@ export const siteConfig: SiteConfig = {
       eyebrow: 'Background & Profile',
       heading: 'Harry Rogers Woollett',
       description:
-        'Junior Systems Developer at the Department of Education (Financial Services Division) based in Melbourne, Australia. Specializing in financial web reporting systems, enterprise databases, and automation frameworks.',
+        'Systems developer at the Department of Education (Financial Services Division) based in Melbourne, Australia. Specializing in financial web reporting systems, enterprise databases, and automation frameworks.',
       downloadResumeLabel: 'Download Resume (PDF)',
       experienceTitle: 'Professional Experience',
       educationTitle: 'Education',

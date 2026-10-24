@@ -18,11 +18,9 @@ export interface SkillCategory {
 
 export interface ResumeData {
   fullName: string;
-  role: string;
   summary: string;
   contact: {
     email: string;
-    phone: string;
     linkedin: string;
     github: string;
     pdfDownloadUrl: string;
@@ -34,19 +32,17 @@ export interface ResumeData {
 
 export const resumeData: ResumeData = {
   fullName: 'Harry Rogers Woollett',
-  role: 'Junior Systems Developer',
   summary:
     'Systems developer experienced in high-reliability financial reporting web applications, database architecture, and automation pipelines. Currently developing state-wide budgeting systems for 1,500+ schools, with a strong foundation in modern web frameworks, SQL optimization, and Agile release management.',
   contact: {
     email: 'harry.rw96@gmail.com',
-    phone: '0431 421 058',
     linkedin: 'https://www.linkedin.com/in/harryrw',
     github: 'https://github.com/harryrw',
     pdfDownloadUrl: '/Harry_Rogers_Woollett_Resume.pdf',
   },
   experience: [
     {
-      role: 'Junior Systems Developer',
+      role: 'Systems Developer',
       company: 'Department of Education — Financial Services Division',
       period: '2023 — Present',
       highlights: [

@@ -1,124 +1,36 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="100%" height="100%" shape-rendering="crispEdges">
-  <style>
-    :root {
-      --bg: #09090b;
-      --border: #27272a;
-      --body: #18181b;
-      --throat: #ffffff;
-      --gold: #fbbf24;
-      --orange: #f97316;
-      --emerald: #10b981;
-      --mint: #34d399;
-      --tip: #09090b;
-      --eyeskin: #6ee7b7;
-      --pupil: #09090b;
-      --perch: #047857;
-    }
-    @media (prefers-color-scheme: light) {
-      :root {
-        --bg: #ffffff;
-        --border: #e4e4e7;
-        --body: #09090b;
-        --throat: #f4f4f5;
-        --gold: #f59e0b;
-        --orange: #ea580c;
-        --emerald: #059669;
-        --mint: #10b981;
-        --tip: #18181b;
-        --eyeskin: #34d399;
-        --pupil: #09090b;
-        --perch: #065f46;
-      }
-    }
-    .bg { fill: var(--bg); stroke: var(--border); stroke-width: 1.5; shape-rendering: auto; }
-    .body { fill: var(--body); }
-    .throat { fill: var(--throat); }
-    .gold { fill: var(--gold); }
-    .orange { fill: var(--orange); }
-    .emerald { fill: var(--emerald); }
-    .mint { fill: var(--mint); }
-    .tip { fill: var(--tip); }
-    .eyeskin { fill: var(--eyeskin); }
-    .pupil { fill: var(--pupil); }
-    .spark { fill: #ffffff; }
-    .perch { fill: var(--perch); }
-  </style>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="100%" height="100%">
+  <defs>
+    <clipPath id="squircle">
+      <rect width="32" height="32" rx="7" />
+    </clipPath>
+  </defs>
 
-  <!-- Squircle Canvas Badge -->
-  <rect x="1" y="1" width="30" height="30" rx="7" class="bg" />
+  <g clip-path="url(#squircle)">
+    <!-- High-contrast dark emerald-zinc rounded tile filling 100% of the 32x32 viewport -->
+    <rect width="32" height="32" fill="#09090b" />
 
-  <!-- Pixel Art Toucan Group -->
-  <!-- 1. Black Body, Head & Tail -->
-  <g class="body">
-    <!-- Crown of Head -->
-    <rect x="7" y="6" width="6" height="2" />
-    <rect x="6" y="8" width="4" height="2" />
-    <!-- Back & Nape -->
-    <rect x="5" y="10" width="4" height="6" />
-    <rect x="4" y="14" width="4" height="7" />
-    <rect x="3" y="18" width="4" height="6" />
-    <!-- Tail Feathers -->
-    <rect x="2" y="24" width="3" height="4" />
-    <rect x="3" y="27" width="2" height="2" />
+    <!-- White Throat/Bib at bottom-left for instant contrast -->
+    <rect x="0" y="21" width="14" height="11" fill="#ffffff" />
+    <rect x="0" y="20" width="14" height="3" fill="#f97316" />
+
+    <!-- Bold Black Toucan Head (Left Side, Full-Bleed) -->
+    <path d="M 0 10 Q 0 3 10 3 L 15 3 L 15 21 L 0 21 Z" fill="#18181b" />
+
+    <!-- Giant High-Contrast Eye (Turquoise Ring + White/Dark Pupil) -->
+    <circle cx="8.5" cy="11.5" r="4.5" fill="#34d399" />
+    <circle cx="8.5" cy="11.5" r="2.4" fill="#09090b" />
+    <circle cx="7.7" cy="10.7" r="1.1" fill="#ffffff" />
+
+    <!-- GIANT ICONIC TOUCAN BEAK (Fills Right 60% of Viewport) -->
+    <!-- Upper Mandible: Vivid Golden-Orange -->
+    <path d="M 14 3 C 23 3, 29 6, 31 15 L 14 15 Z" fill="#fbbf24" />
+    <!-- Mid-Beak Emerald Stripe -->
+    <path d="M 14 11 L 30 11 C 30.6 13, 31 15, 31 16 L 14 16 Z" fill="#10b981" />
+    <!-- Lower Mandible: Deep Emerald -->
+    <path d="M 14 16 L 30.5 16 C 29 21, 24 23, 14 23 Z" fill="#059669" />
+    <!-- Signature Black Beak Tip -->
+    <path d="M 25 6.5 C 28.5 8.5, 30.5 11.5, 31 16 C 30.5 18.5, 29 20.5, 26.5 21.5 L 25 14 Z" fill="#09090b" />
+    <!-- Bold Mouth Divider Line -->
+    <line x1="14" y1="15.5" x2="30.5" y2="15.5" stroke="#09090b" stroke-width="2" />
   </g>
-
-  <!-- 2. White Throat & Breast -->
-  <g class="throat">
-    <rect x="9" y="11" width="4" height="5" />
-    <rect x="8" y="13" width="4" height="4" />
-    <rect x="7" y="16" width="4" height="3" />
-    <rect x="6" y="19" width="4" height="2" />
-  </g>
-
-  <!-- Breast Band (Orange / Emerald accent) -->
-  <rect x="6" y="21" width="4" height="2" class="orange" />
-
-  <!-- 3. Orbital Skin & Eye -->
-  <!-- Bright Mint / Cyan Orbital Skin -->
-  <rect x="8" y="8" width="4" height="4" class="eyeskin" />
-  <!-- Eye Pupil -->
-  <rect x="9" y="9" width="2" height="2" class="pupil" />
-  <!-- Twinkle Highlight with subtle pulse -->
-  <rect x="9" y="9" width="1" height="1" class="spark">
-    <animate attributeName="opacity" values="1;0.25;1" dur="2.5s" repeatCount="indefinite" />
-  </rect>
-
-  <!-- 4. THE ICONIC TOUCAN BEAK (Massive, Arched & Colorful) -->
-  <!-- Top Ridge: Golden Amber -->
-  <rect x="13" y="5" width="3" height="2" class="gold" />
-  <rect x="15" y="5" width="3" height="2" class="gold" />
-  <rect x="17" y="6" width="3" height="2" class="gold" />
-  <rect x="19" y="7" width="3" height="2" class="gold" />
-  <rect x="21" y="9" width="2" height="2" class="gold" />
-
-  <!-- Beak Body Upper: Bright Mint / Emerald -->
-  <rect x="12" y="7" width="4" height="2" class="mint" />
-  <rect x="14" y="7" width="4" height="2" class="mint" />
-  <rect x="17" y="8" width="3" height="2" class="mint" />
-  <rect x="19" y="9" width="3" height="2" class="mint" />
-
-  <!-- Beak Body Lower: Deep Emerald -->
-  <rect x="12" y="9" width="3" height="3" class="emerald" />
-  <rect x="14" y="9" width="4" height="3" class="emerald" />
-  <rect x="17" y="10" width="4" height="3" class="emerald" />
-  <rect x="20" y="11" width="2" height="3" class="emerald" />
-
-  <!-- Lower Mandible Base -->
-  <rect x="12" y="12" width="4" height="2" class="emerald" />
-  <rect x="15" y="12" width="4" height="2" class="emerald" />
-  <rect x="18" y="13" width="3" height="2" class="emerald" />
-
-  <!-- Black Beak Tip (Signature Hooked Point) -->
-  <rect x="22" y="11" width="3" height="3" class="tip" />
-  <rect x="23" y="13" width="2" height="3" class="tip" />
-  <rect x="22" y="15" width="2" height="2" class="tip" />
-
-  <!-- Mouth Line (Slit between mandibles) -->
-  <rect x="13" y="11" width="9" height="1" class="tip" opacity="0.6" />
-
-  <!-- 5. Perch & Feet -->
-  <!-- Emerald Perch Branch -->
-  <rect x="2" y="24" width="12" height="2" class="perch" />
-  <!-- Golden Feet Claws -->
-  <rect x="6" y="23" width="3" height="2" class="gold" />
 </svg>

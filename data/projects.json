@@ -5,9 +5,10 @@
     "tagline": "High-throughput distributed event streaming and audit log engine with deterministic replay.",
     "featured": true,
     "publishedAt": "2026-06-15",
+    "previewImage": "/images/projects/chronos-ledger.svg",
     "links": {
       "github": "https://github.com/harryrw/chronos-ledger",
-      "liveDemo": "https://chronos.example.com"
+      "liveDemo": "https://portfoliohrw-xi.vercel.app/projects"
     },
     "techStack": [
       { "name": "TypeScript", "category": "Backend" },
@@ -35,9 +36,10 @@
     "tagline": "Zero-latency feature flag evaluation engine and real-time telemetry control plane.",
     "featured": true,
     "publishedAt": "2026-09-02",
+    "previewImage": "/images/projects/vanguard-flags.svg",
     "links": {
       "github": "https://github.com/harryrw/vanguard-flags",
-      "liveDemo": "https://vanguard.example.com"
+      "liveDemo": "https://portfoliohrw-xi.vercel.app/projects"
     },
     "techStack": [
       { "name": "React", "category": "Frontend" },

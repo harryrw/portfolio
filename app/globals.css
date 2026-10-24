@@ -13,6 +13,26 @@
   }
 }
 
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    translate: 0 14px;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+@keyframes float-slow {
+  0%, 100% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 -6px;
+  }
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -27,4 +47,28 @@
   .dark :where(a:any-link, button):focus-visible {
     outline-color: #34d399;
   }
+}
+
+.animate-fade-up {
+  @media (prefers-reduced-motion: no-preference) {
+    animation: fade-up 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+}
+
+.animate-float {
+  @media (prefers-reduced-motion: no-preference) {
+    animation: float-slow 5s ease-in-out infinite;
+  }
+}
+
+.delay-75 {
+  animation-delay: 75ms;
+}
+
+.delay-150 {
+  animation-delay: 150ms;
+}
+
+.delay-225 {
+  animation-delay: 225ms;
 }
