@@ -76,7 +76,7 @@ export function DynamicAvatar() {
   const current = THEMES[timeOfDay];
 
   return (
-    <div className="flex flex-col items-center gap-2">
+    <div className="flex items-center justify-center">
       <div className="group relative flex h-48 w-48 sm:h-56 sm:w-56 items-center justify-center">
         <div
           aria-hidden="true"
@@ -110,12 +110,6 @@ export function DynamicAvatar() {
           />
         </div>
       </div>
-
-      {mounted && (
-        <span className="font-mono text-[10px] font-semibold text-zinc-500 uppercase tracking-wider dark:text-zinc-400">
-          Local Sky · {current.label}
-        </span>
-      )}
     </div>
   );
 }
