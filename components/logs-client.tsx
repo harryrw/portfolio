@@ -1,7 +1,7 @@
 'use client';
 
 import { useMemo, useState } from 'react';
-import { Disc3, Film, Gamepad2, Search, SlidersHorizontal, X } from 'lucide-react';
+import { BookOpen, Disc3, Film, Gamepad2, Search, SlidersHorizontal, X } from 'lucide-react';
 import type { MediaCategory, MediaEntry } from '@/types/portfolio';
 import { siteConfig } from '@/data/site';
 import { MediaCard } from '@/components/media-card';
@@ -35,6 +35,7 @@ export function LogsClient({ initialEntries }: LogsClientProps) {
     { id: 'all', label: siteConfig.pages.logs.allTab, icon: SlidersHorizontal },
     { id: 'watching', label: siteConfig.pages.logs.filmsTab, icon: Film },
     { id: 'playing', label: siteConfig.pages.logs.gamesTab, icon: Gamepad2 },
+    { id: 'reading', label: siteConfig.pages.logs.booksTab, icon: BookOpen },
     { id: 'listening', label: siteConfig.pages.logs.musicTab, icon: Disc3 },
   ];
 

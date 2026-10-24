@@ -63,6 +63,7 @@ export interface SiteConfig {
       allTab: string;
       filmsTab: string;
       gamesTab: string;
+      booksTab: string;
       musicTab: string;
       noResultsMessage: string;
     };
@@ -148,10 +149,11 @@ export const siteConfig: SiteConfig = {
       heading: 'Watching, Playing & Listening',
       description:
         'Personal catalog of films, games, and music consumptions, featuring ratings, analytical impressions, and creative takeaways.',
-      searchPlaceholder: 'Search consumptions by title, director, artist, or tags...',
+      searchPlaceholder: 'Search consumptions by title, creator, artist, or tags...',
       allTab: 'All Media',
-      filmsTab: 'Films',
+      filmsTab: 'Films & Series',
       gamesTab: 'Games',
+      booksTab: 'Books',
       musicTab: 'Music',
       noResultsMessage: 'No consumptions found matching your filter criteria.',
     },

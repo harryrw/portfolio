@@ -1,4 +1,4 @@
-import { Disc3, ExternalLink, Film, Gamepad2, Play, Star } from 'lucide-react';
+import { BookOpen, Disc3, ExternalLink, Film, Gamepad2, Play, Star } from 'lucide-react';
 import type { MediaEntry } from '@/types/portfolio';
 
 function getMediaSubtitle(entry: MediaEntry): string {
@@ -9,6 +9,8 @@ function getMediaSubtitle(entry: MediaEntry): string {
       return `${entry.platform} · ${entry.developer} · ${entry.status}`;
     case 'listening':
       return `${entry.format} · ${entry.artist} (${entry.releaseYear})`;
+    case 'reading':
+      return `${entry.format} · ${entry.author} (${entry.releaseYear})`;
   }
 }
 
@@ -20,6 +22,8 @@ function CategoryIcon({ category }: { category: MediaEntry['category'] }) {
       return <Gamepad2 className="h-3.5 w-3.5 text-emerald-600 dark:text-emerald-400" aria-hidden="true" />;
     case 'listening':
       return <Disc3 className="h-3.5 w-3.5 text-emerald-600 dark:text-emerald-400" aria-hidden="true" />;
+    case 'reading':
+      return <BookOpen className="h-3.5 w-3.5 text-emerald-600 dark:text-emerald-400" aria-hidden="true" />;
   }
 }
 

@@ -34,9 +34,9 @@ export interface Project {
   takeaways: ProjectTakeaway[];
 }
 
-// --- 2. Culture & Media Log (Watch, Play, Listen) ---
+// --- 2. Culture & Media Log (Watch, Play, Listen, Read) ---
 
-export type MediaCategory = 'watching' | 'playing' | 'listening';
+export type MediaCategory = 'watching' | 'playing' | 'listening' | 'reading';
 
 export type RatingScore = 1 | 2 | 3 | 4 | 5; // 1-5 star scale
 
@@ -76,4 +76,10 @@ export interface ListenEntry extends BaseMediaEntry {
   standoutTrack?: string;
 }
 
-export type MediaEntry = WatchEntry | PlayEntry | ListenEntry;
+export interface ReadEntry extends BaseMediaEntry {
+  category: 'reading';
+  format: 'Book' | 'Essay' | 'Novel';
+  author: string;
+}
+
+export type MediaEntry = WatchEntry | PlayEntry | ListenEntry | ReadEntry;
