@@ -69,7 +69,7 @@ export default function RootLayout({
         <meta name="color-scheme" content="light dark" />
         <script
           dangerouslySetInnerHTML={{
-            __html: `(function(){try{var s=localStorage.getItem('color-scheme')||(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');if(s==='dark'){document.documentElement.classList.add('dark');}else{document.documentElement.classList.remove('dark');}}catch(e){}})();`,
+            __html: `(function(){try{var m=window.matchMedia('(prefers-color-scheme: dark)');var s=localStorage.getItem('color-scheme');var d=s?s==='dark':m.matches;if(d){document.documentElement.classList.add('dark');}else{document.documentElement.classList.remove('dark');}}catch(e){}})();`,
           }}
         />
       </head>

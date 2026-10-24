@@ -31,20 +31,20 @@ export function ResumeView() {
           </div>
 
           {/* Download Action & Contact Links (Email, GitHub, LinkedIn) */}
-          <div className="flex flex-col gap-3 sm:flex-row sm:items-center md:flex-col md:items-end">
+          <div className="flex flex-wrap items-center gap-2.5 pt-1 md:flex-col md:items-end">
             <a
               href={resumeData.contact.pdfDownloadUrl}
               download="Harry_Rogers_Woollett_Resume.pdf"
-              className="inline-flex min-h-10 items-center justify-center gap-2 rounded-lg bg-emerald-600 px-4 py-2 text-sm font-medium text-white shadow-xs transition-all hover:-translate-y-0.5 hover:bg-emerald-700 dark:bg-emerald-600 dark:hover:bg-emerald-500"
+              className="inline-flex h-9 items-center justify-center gap-2 rounded-lg bg-emerald-600 px-4 text-xs font-semibold text-white shadow-xs transition-all hover:-translate-y-0.5 hover:bg-emerald-700 dark:bg-emerald-600 dark:hover:bg-emerald-500"
             >
-              <Download className="h-4 w-4" aria-hidden="true" />
+              <Download className="h-3.5 w-3.5" aria-hidden="true" />
               <span>{siteConfig.pages.about.downloadResumeLabel}</span>
             </a>
 
-            <div className="flex flex-wrap gap-2 text-xs text-zinc-600 dark:text-zinc-400">
+            <div className="flex flex-wrap items-center gap-2 text-xs">
               <a
                 href={`mailto:${resumeData.contact.email}`}
-                className="inline-flex items-center gap-1.5 rounded-md border border-zinc-200 bg-zinc-50 px-2.5 py-1.5 font-medium transition-colors hover:border-emerald-300 hover:bg-emerald-50 hover:text-emerald-700 dark:border-zinc-800 dark:bg-zinc-950 dark:hover:border-emerald-700 dark:hover:text-emerald-300"
+                className="inline-flex h-9 items-center gap-1.5 rounded-lg border border-zinc-200 bg-zinc-50 px-3 font-medium text-zinc-700 transition-colors hover:border-emerald-300 hover:bg-emerald-50 hover:text-emerald-700 dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-300 dark:hover:border-emerald-700 dark:hover:text-emerald-300"
               >
                 <Mail className="h-3.5 w-3.5 text-emerald-600 dark:text-emerald-400" aria-hidden="true" />
                 <span>{resumeData.contact.email}</span>
@@ -53,19 +53,19 @@ export function ResumeView() {
                 href={resumeData.contact.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 rounded-md border border-zinc-200 bg-zinc-50 px-2.5 py-1.5 font-medium transition-colors hover:border-emerald-300 hover:bg-emerald-50 hover:text-emerald-700 dark:border-zinc-800 dark:bg-zinc-950 dark:hover:border-emerald-700 dark:hover:text-emerald-300"
+                className="inline-flex h-9 items-center gap-1.5 rounded-lg border border-zinc-200 bg-zinc-50 px-3 font-medium text-zinc-700 transition-colors hover:border-emerald-300 hover:bg-emerald-50 hover:text-emerald-700 dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-300 dark:hover:border-emerald-700 dark:hover:text-emerald-300"
               >
                 <span>GitHub</span>
-                <ExternalLink className="h-3 w-3" aria-hidden="true" />
+                <ExternalLink className="h-3 w-3 opacity-75" aria-hidden="true" />
               </a>
               <a
                 href={resumeData.contact.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 rounded-md border border-zinc-200 bg-zinc-50 px-2.5 py-1.5 font-medium transition-colors hover:border-emerald-300 hover:bg-emerald-50 hover:text-emerald-700 dark:border-zinc-800 dark:bg-zinc-950 dark:hover:border-emerald-700 dark:hover:text-emerald-300"
+                className="inline-flex h-9 items-center gap-1.5 rounded-lg border border-zinc-200 bg-zinc-50 px-3 font-medium text-zinc-700 transition-colors hover:border-emerald-300 hover:bg-emerald-50 hover:text-emerald-700 dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-300 dark:hover:border-emerald-700 dark:hover:text-emerald-300"
               >
                 <span>LinkedIn</span>
-                <ExternalLink className="h-3 w-3" aria-hidden="true" />
+                <ExternalLink className="h-3 w-3 opacity-75" aria-hidden="true" />
               </a>
             </div>
           </div>

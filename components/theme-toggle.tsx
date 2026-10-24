@@ -11,21 +11,38 @@ export function ThemeToggle() {
   useEffect(() => {
     setMounted(true);
     const root = document.documentElement;
-    const hasDark = root.classList.contains('dark');
-    setIsDark(hasDark);
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
 
-    const handleStorage = (e: StorageEvent) => {
-      if (e.key === 'color-scheme') {
-        const nextDark = e.newValue === 'dark';
-        setIsDark(nextDark);
-        root.classList.toggle('dark', nextDark);
-        const meta = document.querySelector('meta[name="color-scheme"]');
-        if (meta) meta.setAttribute('content', e.newValue || 'light dark');
+    // Check localStorage first; if not set, mirror system preference
+    const saved = localStorage.getItem('color-scheme');
+    const initialDark = saved ? saved === 'dark' : mediaQuery.matches;
+    setIsDark(initialDark);
+    root.classList.toggle('dark', initialDark);
+
+    const handleMediaChange = (e: MediaQueryListEvent) => {
+      // If the user hasn't explicitly set a custom override in this session, follow OS change
+      const currentSaved = localStorage.getItem('color-scheme');
+      if (!currentSaved) {
+        setIsDark(e.matches);
+        root.classList.toggle('dark', e.matches);
       }
     };
 
+    const handleStorage = (e: StorageEvent) => {
+      if (e.key === 'color-scheme') {
+        const nextDark = e.newValue ? e.newValue === 'dark' : mediaQuery.matches;
+        setIsDark(nextDark);
+        root.classList.toggle('dark', nextDark);
+      }
+    };
+
+    mediaQuery.addEventListener('change', handleMediaChange);
     window.addEventListener('storage', handleStorage);
-    return () => window.removeEventListener('storage', handleStorage);
+
+    return () => {
+      mediaQuery.removeEventListener('change', handleMediaChange);
+      window.removeEventListener('storage', handleStorage);
+    };
   }, []);
 
   const toggleTheme = () => {

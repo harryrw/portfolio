@@ -4,6 +4,7 @@ import { getFeaturedProjects, getMediaEntries } from '@/lib/data';
 import { siteConfig } from '@/data/site';
 import { ProjectCard } from '@/components/project-card';
 import { MediaCard } from '@/components/media-card';
+import { DynamicAvatar } from '@/components/dynamic-avatar';
 
 export default function HomePage() {
   const projects = getFeaturedProjects();
@@ -21,7 +22,7 @@ export default function HomePage() {
 
   return (
     <div className="space-y-12 sm:space-y-16">
-      {/* Hero Section with Stylized Indie-Web Avatar */}
+      {/* Hero Section with Stylized Indie-Web Avatar with Dynamic Landscape Background */}
       <section className="animate-fade-up relative overflow-hidden rounded-2xl border border-zinc-200 bg-white p-6 shadow-xs transition-colors dark:border-zinc-800 dark:bg-zinc-900 sm:p-10">
         <div
           aria-hidden="true"
@@ -53,21 +54,9 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Stylized Illustrated Avatar in the style of anhvn.com */}
+          {/* Stylized Illustrated Avatar with Time-of-Day Dynamic Landscape */}
           <div className="flex justify-center lg:col-span-4">
-            <div className="group relative flex items-center justify-center">
-              <div
-                aria-hidden="true"
-                className="absolute -inset-1.5 rounded-full bg-gradient-to-tr from-emerald-500/30 via-emerald-400/20 to-teal-500/30 blur-md transition duration-500 group-hover:scale-105"
-              />
-              <img
-                src="/images/avatar.png"
-                alt="Stylized portrait of Harry"
-                width={220}
-                height={220}
-                className="relative h-44 w-44 rounded-full border-4 border-white object-cover shadow-md transition-transform duration-300 group-hover:scale-105 dark:border-zinc-800 sm:h-52 sm:w-52"
-              />
-            </div>
+            <DynamicAvatar />
           </div>
         </div>
       </section>
