@@ -1,8 +1,7 @@
 import Link from 'next/link';
-import { ArrowRight, Sparkles } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { getFeaturedProjects, getMediaEntries } from '@/lib/data';
 import { siteConfig } from '@/data/site';
-import { StatusBanner } from '@/components/StatusBanner';
 import { ProjectCard } from '@/components/project-card';
 import { MediaCard } from '@/components/media-card';
 
@@ -10,28 +9,20 @@ export default function HomePage() {
   const projects = getFeaturedProjects();
   const allMedia = getMediaEntries();
 
-  // Pick latest movie or show, game, book, and music, up to 6 entries
+  // Exactly one entry from each of the 4 media categories: Film/Show, Game, Book, Music (2x2 grid)
   const latestWatch = allMedia.find((m) => m.category === 'watching');
   const latestPlay = allMedia.find((m) => m.category === 'playing');
   const latestRead = allMedia.find((m) => m.category === 'reading');
   const latestListen = allMedia.find((m) => m.category === 'listening');
 
-  const priorityEntries = [latestWatch, latestPlay, latestRead, latestListen].filter(
+  const fourConsumptions = [latestWatch, latestPlay, latestRead, latestListen].filter(
     (e): e is NonNullable<typeof e> => Boolean(e)
   );
 
-  const remaining = allMedia.filter((m) => !priorityEntries.some((p) => p.id === m.id));
-  const recentConsumptions = [...priorityEntries, ...remaining].slice(0, 6);
-
   return (
     <div className="space-y-12 sm:space-y-16">
-      {/* Live System Telemetry HUD */}
-      <div className="animate-fade-up">
-        <StatusBanner />
-      </div>
-
       {/* Hero Section with Stylized Indie-Web Avatar */}
-      <section className="animate-fade-up delay-75 relative overflow-hidden rounded-2xl border border-zinc-200 bg-white p-6 shadow-xs transition-colors dark:border-zinc-800 dark:bg-zinc-900 sm:p-10">
+      <section className="animate-fade-up relative overflow-hidden rounded-2xl border border-zinc-200 bg-white p-6 shadow-xs transition-colors dark:border-zinc-800 dark:bg-zinc-900 sm:p-10">
         <div
           aria-hidden="true"
           className="pointer-events-none absolute -top-24 -right-24 h-72 w-72 rounded-full bg-emerald-500/10 blur-3xl dark:bg-emerald-500/15"
@@ -108,7 +99,7 @@ export default function HomePage() {
         </ul>
       </section>
 
-      {/* Consumptions Section - 2x3 Grid */}
+      {/* Consumptions Section - 2x2 Grid with one entry per category */}
       <section className="animate-fade-up delay-225 space-y-6">
         <div className="flex flex-col justify-between gap-2 sm:flex-row sm:items-end">
           <div>
@@ -128,8 +119,8 @@ export default function HomePage() {
           </Link>
         </div>
 
-        <ul role="list" className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {recentConsumptions.map((entry) => (
+        <ul role="list" className="grid gap-6 sm:grid-cols-2">
+          {fourConsumptions.map((entry) => (
             <MediaCard key={entry.id} entry={entry} />
           ))}
         </ul>

@@ -1,32 +1,33 @@
 [
   {
-    "slug": "distributed-event-ledger",
-    "title": "Chronos Ledger",
-    "tagline": "High-throughput distributed event streaming and audit log engine with deterministic replay.",
+    "slug": "gaminglandr-leaks-radar",
+    "title": "GamingLANDR.com",
+    "tagline": "Cosmonaut-themed intelligence hub aggregating gaming leaks and rumors across Twitter, Bluesky, and Reddit.",
     "featured": true,
-    "publishedAt": "2026-06-15",
-    "previewImage": "/images/projects/chronos-ledger.svg",
+    "publishedAt": "2026-11-01",
+    "previewImage": "/images/projects/gaminglandr.svg",
     "links": {
-      "github": "https://github.com/harryrw/chronos-ledger",
-      "liveDemo": "https://portfoliohrw-xi.vercel.app/projects"
+      "github": "https://github.com/harryrw/gaminglandr",
+      "liveDemo": "https://gaminglandr.com"
     },
     "techStack": [
-      { "name": "TypeScript", "category": "Backend" },
-      { "name": "PostgreSQL", "category": "Database" },
       { "name": "Next.js", "category": "Frontend" },
-      { "name": "Docker", "category": "DevOps" },
-      { "name": "Event Sourcing", "category": "Architecture" }
+      { "name": "TypeScript", "category": "Frontend" },
+      { "name": "Bluesky API", "category": "Backend" },
+      { "name": "Reddit API", "category": "Backend" },
+      { "name": "Tailwind CSS", "category": "Frontend" },
+      { "name": "Real-time Telemetry", "category": "Architecture" }
     ],
-    "overview": "Chronos Ledger is an append-only event store designed for financial and operational microservices requiring strict ordering, cryptographic tamper evidence, and sub-50ms query latency across partitioned streams.",
-    "architectureOverview": "Events are ingested through stateless edge workers, sequenced via partitioned write-ahead logs, and asynchronously projected into read-optimized PostgreSQL materialized views.",
+    "overview": "GamingLANDR.com is an upcoming space/cosmonaut-themed intelligence hub tracking and cross-verifying gaming industry leaks and rumors. It synthesizes real-time chatter and breaking reports from X (Twitter), the AT Protocol (Bluesky), and r/GamingLeaksAndRumours into a unified radar feed with credibility scoring and spoiler controls.",
+    "architectureOverview": "Multi-stream event listeners poll and webhook-subscribe to Bluesky, Twitter/X firehoses, and Reddit feeds. Ingested claims are normalized, deduplicated via semantic vector similarity, and relayed to cosmonaut HUD clients over WebSockets.",
     "takeaways": [
       {
-        "challenge": "Hot partition contention during burst traffic spikes exceeding 15,000 events per second.",
-        "solution": "Implemented adaptive shard key hashing with bounded in-memory batching, reducing write lock contention by 78%."
+        "challenge": "Aggregating unformatted rumor threads across multiple disparate social APIs with varying rate limits.",
+        "solution": "Architected an edge queue consumer with priority backoff and automatic cross-platform claim deduplication."
       },
       {
-        "challenge": "Slow state reconstruction when replaying long-lived aggregate streams.",
-        "solution": "Introduced automated rolling snapshots every 500 events with zero-downtime background compaction."
+        "challenge": "Filtering signal from noise while preserving chronological breaking alerts.",
+        "solution": "Designed a community-weighted veracity rating system alongside spoiler tagging and provenance chain inspection."
       }
     ]
   },

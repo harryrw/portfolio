@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Code2, Menu, X } from 'lucide-react';
+import { Menu, Wifi, X } from 'lucide-react';
 import { siteConfig } from '@/data/site';
 import { ThemeToggle } from '@/components/theme-toggle';
 
@@ -14,17 +14,22 @@ export function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-zinc-200/80 bg-white/90 backdrop-blur-md transition-colors dark:border-zinc-800/80 dark:bg-zinc-950/90">
       <div className="mx-auto flex h-16 max-w-5xl items-center justify-between px-4 sm:px-6 lg:px-8">
+        {/* Left: Toucan Home Button without "Harry" text */}
         <Link
           href="/"
-          className="group inline-flex items-center gap-2.5 text-base font-semibold tracking-tight text-zinc-900 transition-colors hover:text-emerald-600 dark:text-zinc-100 dark:hover:text-emerald-400"
+          aria-label="Home"
+          className="group relative flex h-10 w-10 items-center justify-center rounded-xl p-0.5 transition-transform duration-300 hover:scale-105"
         >
-          <span className="flex h-8 w-8 items-center justify-center rounded-lg border border-emerald-200 bg-emerald-50 text-emerald-600 transition-transform duration-300 group-hover:scale-105 group-hover:border-emerald-300 group-hover:bg-emerald-100 dark:border-emerald-800/60 dark:bg-emerald-950/50 dark:text-emerald-400 dark:group-hover:border-emerald-700 dark:group-hover:bg-emerald-900/40">
-            <Code2 className="h-4 w-4" aria-hidden="true" />
-          </span>
-          <span>{siteConfig.name}</span>
+          <img
+            src="/images/toucan-nav.png"
+            alt="Toucan home logo"
+            width={38}
+            height={38}
+            className="h-9 w-9 rounded-full border border-emerald-300/80 object-cover shadow-2xs transition-all duration-300 group-hover:border-emerald-500 group-hover:shadow-xs dark:border-emerald-700/60"
+          />
         </Link>
 
-        {/* Desktop Navigation */}
+        {/* Center: Desktop Navigation */}
         <nav aria-label={siteConfig.navAriaLabel} className="hidden md:block">
           <ul className="flex items-center gap-1">
             {siteConfig.navItems.map((item) => {
@@ -52,8 +57,33 @@ export function Header() {
           </ul>
         </nav>
 
-        {/* Action Controls: Theme Toggle & Mobile Trigger */}
+        {/* Right Corner: Compact Status HUD + Theme Toggle */}
         <div className="flex items-center gap-2">
+          {/* Mini Corner Telemetry Status Indicator */}
+          <div
+            aria-label="System status"
+            className="hidden items-center gap-2 rounded-lg border border-zinc-200/90 bg-zinc-50/90 px-2.5 py-1 text-xs font-mono shadow-2xs transition-colors dark:border-zinc-800/90 dark:bg-zinc-900/90 sm:inline-flex"
+          >
+            <span className="relative flex h-2 w-2">
+              <span
+                className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"
+                aria-hidden="true"
+              />
+              <span
+                className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500"
+                aria-hidden="true"
+              />
+            </span>
+            <span className="font-medium text-zinc-700 dark:text-zinc-300">
+              Online
+            </span>
+            <span className="text-zinc-300 dark:text-zinc-700">|</span>
+            <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-emerald-700 dark:text-emerald-400">
+              <Wifi className="h-2.5 w-2.5" aria-hidden="true" />
+              <span>200 OK</span>
+            </span>
+          </div>
+
           <ThemeToggle />
 
           <button
