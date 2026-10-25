@@ -1,118 +1,235 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 320" width="100%" height="100%" fill="none">
   <defs>
-    <!-- Deep space background gradient -->
-    <linearGradient id="spaceGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#050814" />
-      <stop offset="50%" stop-color="#0b112c" />
-      <stop offset="100%" stop-color="#070a1a" />
+    <!-- Background Space / Cyber Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050813" />
+      <stop offset="50%" stop-color="#0a1026" />
+      <stop offset="100%" stop-color="#060914" />
     </linearGradient>
 
-    <!-- Radar / Nebula glow -->
-    <radialGradient id="nebulaGlow" cx="50%" cy="40%" r="55%">
-      <stop offset="0%" stop-color="#10b981" stop-opacity="0.18" />
-      <stop offset="45%" stop-color="#6366f1" stop-opacity="0.12" />
+    <!-- Half-Life Orange Ambient Glow -->
+    <radialGradient id="hlOrangeGlow" cx="28%" cy="52%" r="45%">
+      <stop offset="0%" stop-color="#f97316" stop-opacity="0.32" />
+      <stop offset="50%" stop-color="#ea580c" stop-opacity="0.12" />
       <stop offset="100%" stop-color="#000000" stop-opacity="0" />
     </radialGradient>
 
-    <!-- Grid pattern -->
-    <pattern id="spaceGrid" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#334155" stroke-width="0.75" stroke-opacity="0.25" />
+    <!-- Cosmonaut Cyan Radar Glow -->
+    <radialGradient id="cyanRadarGlow" cx="75%" cy="30%" r="50%">
+      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.22" />
+      <stop offset="60%" stop-color="#3b82f6" stop-opacity="0.06" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Hero Card Art Gradient (Arctic Citadel & Borealis) -->
+    <linearGradient id="hlHeroCardBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#141c30" />
+      <stop offset="60%" stop-color="#0e1424" />
+      <stop offset="100%" stop-color="#080c18" />
+    </linearGradient>
+
+    <!-- Valve Lambda Orange Gradient -->
+    <linearGradient id="lambdaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffedd5" />
+      <stop offset="30%" stop-color="#fb923c" />
+      <stop offset="100%" stop-color="#ea580c" />
+    </linearGradient>
+
+    <!-- Radar Grid Pattern -->
+    <pattern id="radarGrid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#334155" stroke-width="0.5" stroke-opacity="0.22" />
     </pattern>
   </defs>
 
-  <!-- Deep space canvas -->
-  <rect width="800" height="450" fill="url(#spaceGrad)" />
-  <rect width="800" height="450" fill="url(#nebulaGlow)" />
-  <rect width="800" height="450" fill="url(#spaceGrid)" />
+  <!-- Deep Canvas Base -->
+  <rect width="800" height="320" fill="url(#bgGrad)" />
+  <rect width="800" height="320" fill="url(#hlOrangeGlow)" />
+  <rect width="800" height="320" fill="url(#cyanRadarGlow)" />
+  <rect width="800" height="320" fill="url(#radarGrid)" />
 
-  <!-- Stars cluster -->
-  <g fill="#ffffff" opacity="0.6">
-    <circle cx="80" cy="60" r="1" />
-    <circle cx="140" cy="120" r="1.5" opacity="0.8" />
-    <circle cx="210" cy="40" r="1" />
-    <circle cx="280" cy="90" r="1.2" />
-    <circle cx="680" cy="80" r="1.5" opacity="0.9" />
-    <circle cx="740" cy="160" r="1" />
-    <circle cx="620" cy="220" r="1" />
-    <circle cx="90" cy="360" r="1.2" />
-    <circle cx="160" cy="400" r="1" />
-    <circle cx="710" cy="380" r="1.5" />
+  <!-- Stars / Space Dust in Background -->
+  <g fill="#ffffff" opacity="0.45">
+    <circle cx="50" cy="45" r="1" />
+    <circle cx="120" cy="110" r="1.2" opacity="0.8" />
+    <circle cx="280" cy="35" r="1" />
+    <circle cx="410" cy="290" r="1.5" />
+    <circle cx="590" cy="40" r="1" />
+    <circle cx="730" cy="85" r="1.2" opacity="0.7" />
+    <circle cx="770" cy="270" r="1" />
   </g>
 
-  <!-- Planet / Celestial horizon curve -->
-  <ellipse cx="400" cy="560" rx="460" ry="200" fill="#090d21" stroke="#38bdf8" stroke-width="1.5" stroke-opacity="0.3" />
+  <!-- ============================================================
+       TOP BROWSER / HUD HEADER BAR
+       ============================================================ -->
+  <g transform="translate(14, 10)">
+    <!-- Browser Chrome Frame -->
+    <rect width="772" height="30" rx="8" fill="#0c1222" stroke="#1e293b" stroke-width="1" />
+    <!-- Window Controls -->
+    <circle cx="16" cy="15" r="4.5" fill="#ef4444" opacity="0.85" />
+    <circle cx="30" cy="15" r="4.5" fill="#f59e0b" opacity="0.85" />
+    <circle cx="44" cy="15" r="4.5" fill="#10b981" opacity="0.85" />
 
-  <!-- Radar Scanning Rings (Telemetry Hub) -->
-  <g transform="translate(400, 210)">
-    <circle r="140" fill="none" stroke="#10b981" stroke-width="1" stroke-opacity="0.2" stroke-dasharray="4 6" />
-    <circle r="105" fill="none" stroke="#06b6d4" stroke-width="1" stroke-opacity="0.3" />
-    <circle r="70" fill="none" stroke="#10b981" stroke-width="1.5" stroke-opacity="0.4" />
-    <circle r="35" fill="none" stroke="#38bdf8" stroke-width="1" stroke-opacity="0.5" stroke-dasharray="2 3" />
-
-    <!-- Pulsing telemetry ring -->
-    <circle r="70" fill="none" stroke="#34d399" stroke-width="2">
-      <animate attributeName="r" values="35;140;35" dur="6s" repeatCount="indefinite" />
-      <animate attributeName="opacity" values="0.8;0;0.8" dur="6s" repeatCount="indefinite" />
-    </circle>
-
-    <!-- Crosshair coordinate lines -->
-    <line x1="-155" y1="0" x2="155" y2="0" stroke="#38bdf8" stroke-width="1" stroke-opacity="0.35" stroke-dasharray="3 3" />
-    <line x1="0" y1="-155" x2="0" y2="155" stroke="#38bdf8" stroke-width="1" stroke-opacity="0.35" stroke-dasharray="3 3" />
-
-    <!-- Cosmonaut / Lander Module Icon in Center -->
-    <g transform="translate(-20, -20)">
-      <!-- Lander chassis -->
-      <polygon points="10,8 30,8 36,26 4,26" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5" />
-      <!-- Helmet / Observation Dome -->
-      <path d="M 14 8 A 6 6 0 0 1 26 8 Z" fill="#38bdf8" opacity="0.85" />
-      <!-- Thruster base & legs -->
-      <line x1="8" y1="26" x2="2" y2="36" stroke="#f59e0b" stroke-width="1.5" />
-      <line x1="32" y1="26" x2="38" y2="36" stroke="#f59e0b" stroke-width="1.5" />
-      <line x1="16" y1="26" x2="16" y2="33" stroke="#ef4444" stroke-width="2" />
-      <line x1="24" y1="26" x2="24" y2="33" stroke="#ef4444" stroke-width="2" />
-      <circle cx="20" cy="18" r="3" fill="#34d399" />
+    <!-- URL / Omnibar -->
+    <g transform="translate(70, 5)">
+      <rect width="360" height="20" rx="5" fill="#070b14" stroke="#1e293b" stroke-width="0.75" />
+      <!-- Lock Icon -->
+      <path d="M 12 11 L 12 9 A 3 3 0 0 1 18 9 L 18 11 M 10 11 L 20 11 L 20 16 L 10 16 Z" stroke="#38bdf8" stroke-width="1" fill="none" />
+      <text x="26" y="14" font-family="ui-monospace, monospace" font-size="10" font-weight="600" fill="#94a3b8">gaminglandr.com<tspan fill="#38bdf8">/radar</tspan><tspan fill="#f97316">/project-hlx</tspan></text>
     </g>
 
-    <!-- Source Node 1: Twitter / X Feed (Top Left) -->
-    <g transform="translate(-160, -70)">
-      <rect x="-45" y="-14" width="90" height="28" rx="6" fill="#0f172a" stroke="#38bdf8" stroke-width="1" />
-      <text x="0" y="4" text-anchor="middle" font-family="monospace" font-size="10" font-weight="600" fill="#38bdf8">X / TWITTER</text>
-      <circle cx="45" cy="0" r="3" fill="#38bdf8" />
-      <line x1="45" y1="0" x2="135" y2="55" stroke="#38bdf8" stroke-width="1" stroke-opacity="0.5" stroke-dasharray="3 3" />
-    </g>
-
-    <!-- Source Node 2: Bluesky Feed (Bottom Left) -->
-    <g transform="translate(-160, 75)">
-      <rect x="-40" y="-14" width="80" height="28" rx="6" fill="#0f172a" stroke="#0ea5e9" stroke-width="1" />
-      <text x="0" y="4" text-anchor="middle" font-family="monospace" font-size="10" font-weight="600" fill="#0ea5e9">BLUESKY</text>
-      <circle cx="40" cy="0" r="3" fill="#0ea5e9" />
-      <line x1="40" y1="0" x2="135" y2="-55" stroke="#0ea5e9" stroke-width="1" stroke-opacity="0.5" stroke-dasharray="3 3" />
-    </g>
-
-    <!-- Source Node 3: r/GamingLeaksAndRumours (Right) -->
-    <g transform="translate(175, 5)">
-      <rect x="-45" y="-14" width="90" height="28" rx="6" fill="#0f172a" stroke="#f97316" stroke-width="1" />
-      <text x="0" y="4" text-anchor="middle" font-family="monospace" font-size="10" font-weight="600" fill="#f97316">r/GL&amp;R SUB</text>
-      <circle cx="-45" cy="0" r="3" fill="#f97316" />
-      <line x1="-45" y1="0" x2="-135" y2="0" stroke="#f97316" stroke-width="1" stroke-opacity="0.5" stroke-dasharray="3 3" />
+    <!-- Cosmonaut Radar Telemetry Pill -->
+    <g transform="translate(560, 5)">
+      <rect width="198" height="20" rx="5" fill="#042f2e" stroke="#10b981" stroke-width="0.75" />
+      <circle cx="12" cy="10" r="3.5" fill="#34d399">
+        <animate attributeName="opacity" values="1;0.3;1" dur="1.8s" repeatCount="indefinite" />
+      </circle>
+      <text x="22" y="14" font-family="ui-monospace, monospace" font-size="9" font-weight="700" fill="#34d399" letter-spacing="1">RADAR SYNC: 3 SOURCES LIVE</text>
     </g>
   </g>
 
-  <!-- Top UI HUD Bar -->
-  <g transform="translate(40, 35)">
-    <rect width="720" height="34" rx="8" fill="#0b112c" fill-opacity="0.8" stroke="#1e293b" stroke-width="1" />
-    <circle cx="20" cy="17" r="4" fill="#10b981" />
-    <text x="32" y="21" font-family="monospace" font-size="11" font-weight="700" fill="#e2e8f0" letter-spacing="1">GAMINGLANDR.COM</text>
-    <text x="210" y="21" font-family="monospace" font-size="10" fill="#64748b">|</text>
-    <text x="225" y="21" font-family="monospace" font-size="10" fill="#94a3b8">MISSION: LEAKS &amp; RUMORS RADAR</text>
-    <rect x="580" y="8" width="125" height="18" rx="4" fill="#065f46" fill-opacity="0.4" stroke="#10b981" stroke-width="0.75" />
-    <text x="642" y="20" text-anchor="middle" font-family="monospace" font-size="9" font-weight="600" fill="#34d399">TELEMETRY: ACTIVE</text>
+  <!-- ============================================================
+       LEFT PANEL: FEATURED LEAK SHOWCASE (HALF-LIFE 3 / PROJECT HLX)
+       ============================================================ -->
+  <g transform="translate(14, 48)">
+    <!-- Featured Card Backdrop -->
+    <rect width="374" height="260" rx="12" fill="url(#hlHeroCardBg)" stroke="#f97316" stroke-width="1.2" stroke-opacity="0.6" />
+
+    <!-- Arctic Citadel / Borealis Silhouette in Card Background -->
+    <g opacity="0.35">
+      <!-- Arctic Mountains / Glaciers -->
+      <polygon points="0,170 60,115 130,150 200,95 280,140 374,105 374,170 0,170" fill="#1e293b" />
+      <!-- The Combine Citadel Silhouette -->
+      <polygon points="185,40 195,40 200,165 180,165" fill="#0f172a" stroke="#38bdf8" stroke-width="0.5" stroke-opacity="0.6" />
+      <line x1="190" y1="25" x2="190" y2="40" stroke="#38bdf8" stroke-width="1" />
+      <!-- Citadel Energy Beam Pulse -->
+      <line x1="190" y1="0" x2="190" y2="120" stroke="#38bdf8" stroke-width="1.5" stroke-opacity="0.4" stroke-dasharray="4 4" />
+    </g>
+
+    <!-- Half-Life 3 (HLX) Hero Emblem -->
+    <g transform="translate(24, 20)">
+      <!-- Outer Lambda Ring -->
+      <circle cx="36" cy="36" r="32" fill="#0a0e1c" stroke="#f97316" stroke-width="3" />
+      <circle cx="36" cy="36" r="30" fill="none" stroke="#ea580c" stroke-width="1" stroke-dasharray="4 3" opacity="0.6" />
+
+      <!-- Glowing Half-Life Lambda (λ) Symbol -->
+      <g stroke="url(#lambdaGrad)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none">
+        <!-- Left Short Arm -->
+        <path d="M 23 48 L 31 34" />
+        <!-- Main Diagonal Leg -->
+        <path d="M 27 24 C 33 24 37 31 46 48" />
+        <!-- Top Curve Joining Main -->
+        <path d="M 31 34 L 38 24" />
+      </g>
+
+      <!-- Crowbar Icon Silhouette Overlay -->
+      <g transform="translate(62, 10) rotate(24)" opacity="0.9">
+        <!-- Crowbar Hook & Shaft -->
+        <path d="M 0 0 L 0 44 L 3 44 L 3 6 C 3 2, 7 0, 11 3 L 13 5" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round" />
+        <path d="M 10 2 L 14 6" stroke="#94a3b8" stroke-width="1.5" />
+      </g>
+
+      <!-- Badge Next to Emblem -->
+      <g transform="translate(80, 10)">
+        <rect width="138" height="18" rx="4" fill="#431407" stroke="#f97316" stroke-width="0.75" />
+        <text x="8" y="12" font-family="ui-monospace, monospace" font-size="9" font-weight="700" fill="#fb923c" letter-spacing="1">PROJECT HLX · VALVE</text>
+        
+        <text x="0" y="38" font-family="'Instrument Serif', Georgia, serif" font-size="24" font-weight="400" fill="#ffffff" letter-spacing="0.5">Half-Life 3</text>
+        <text x="110" y="38" font-family="ui-monospace, monospace" font-size="13" font-weight="800" fill="#f97316">[HLX]</text>
+      </g>
+    </g>
+
+    <!-- Key Intel Summary Box -->
+    <g transform="translate(18, 98)">
+      <rect width="338" height="84" rx="8" fill="#090d18" stroke="#1e293b" stroke-width="1" />
+      <text x="12" y="20" font-family="ui-monospace, monospace" font-size="9" font-weight="700" fill="#38bdf8" letter-spacing="1">LATEST INTELLIGENCE DOSSIER</text>
+      
+      <text x="12" y="38" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#f1f5f9">Source 2 Single-Player Campaign Leak</text>
+      <text x="12" y="55" font-family="system-ui, sans-serif" font-size="9.5" fill="#94a3b8">Datamines reveal HEV suit upgrades, dynamic gravity</text>
+      <text x="12" y="69" font-family="system-ui, sans-serif" font-size="9.5" fill="#94a3b8">vortex mechanics, and semi-open Arctic Xen environments.</text>
+    </g>
+
+    <!-- Telemetry Stats Grid at Bottom of Hero Card -->
+    <g transform="translate(18, 192)">
+      <!-- Stat 1: Engine -->
+      <rect width="106" height="52" rx="6" fill="#070b14" stroke="#1e293b" stroke-width="0.75" />
+      <text x="10" y="18" font-family="ui-monospace, monospace" font-size="8" fill="#64748b">ENGINE</text>
+      <text x="10" y="36" font-family="ui-monospace, monospace" font-size="11" font-weight="700" fill="#38bdf8">Source 2</text>
+
+      <!-- Stat 2: Verified Leaks -->
+      <g transform="translate(116, 0)">
+        <rect width="106" height="52" rx="6" fill="#070b14" stroke="#1e293b" stroke-width="0.75" />
+        <text x="10" y="18" font-family="ui-monospace, monospace" font-size="8" fill="#64748b">COMMITS DETECTED</text>
+        <text x="10" y="36" font-family="ui-monospace, monospace" font-size="11" font-weight="700" fill="#f97316">1,480+ HLX</text>
+      </g>
+
+      <!-- Stat 3: Veracity Score -->
+      <g transform="translate(232, 0)">
+        <rect width="106" height="52" rx="6" fill="#042f2e" stroke="#10b981" stroke-width="0.75" />
+        <text x="10" y="18" font-family="ui-monospace, monospace" font-size="8" fill="#34d399">VERACITY INDEX</text>
+        <text x="10" y="36" font-family="ui-monospace, monospace" font-size="11" font-weight="800" fill="#10b981">94% CONFIRMED</text>
+      </g>
+    </g>
   </g>
 
-  <!-- Bottom Coordinates / Status Footer -->
-  <g transform="translate(40, 420)" font-family="monospace" font-size="10" fill="#64748b">
-    <text x="0" y="0">ORBIT: GEO-SYNC</text>
-    <text x="200" y="0">SECTOR: MULTI-FEED INGESTION</text>
-    <text x="560" y="0">COSMODROME: V1.0-ALPHA</text>
+  <!-- ============================================================
+       RIGHT PANEL: GAMINGLANDR REAL-TIME RUMOR RADAR FEED
+       ============================================================ -->
+  <g transform="translate(400, 48)">
+    <!-- Feed Header Bar -->
+    <g transform="translate(0, 0)">
+      <text x="0" y="12" font-family="ui-monospace, monospace" font-size="10" font-weight="800" fill="#e2e8f0" letter-spacing="1">REAL-TIME LEAK RADAR FEED</text>
+      <circle cx="210" cy="8" r="3" fill="#10b981">
+        <animate attributeName="opacity" values="1;0.4;1" dur="1.2s" repeatCount="indefinite" />
+      </circle>
+      <text x="220" y="12" font-family="ui-monospace, monospace" font-size="9" font-weight="600" fill="#10b981">LIVE INGESTION</text>
+    </g>
+
+    <!-- Rumor Card 1: CS2 / Deadlock Datamine (Tyler McVicker) -->
+    <g transform="translate(0, 22)">
+      <rect width="386" height="72" rx="8" fill="#0c1222" stroke="#1e293b" stroke-width="1" />
+      <!-- Source Badge -->
+      <rect x="12" y="10" width="102" height="16" rx="4" fill="#0369a1" fill-opacity="0.3" stroke="#38bdf8" stroke-width="0.6" />
+      <text x="18" y="21" font-family="ui-monospace, monospace" font-size="8" font-weight="700" fill="#38bdf8">BLUESKY · @ValveData</text>
+
+      <!-- Veracity Pill -->
+      <rect x="290" y="10" width="84" height="16" rx="4" fill="#064e3b" stroke="#10b981" stroke-width="0.6" />
+      <text x="332" y="21" text-anchor="middle" font-family="ui-monospace, monospace" font-size="8" font-weight="700" fill="#34d399">96% VERIFIED</text>
+
+      <!-- Headline & Snippet -->
+      <text x="12" y="42" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#f8fafc">Source 2 physics strings leak 'hlx_gravity_manipulator'</text>
+      <text x="12" y="58" font-family="system-ui, sans-serif" font-size="9.5" fill="#94a3b8">Latest updates confirm Xen fauna, dynamic voxel destructibility &amp; feral Combine.</text>
+    </g>
+
+    <!-- Rumor Card 2: Voice Actor Resume (Project White Sands) -->
+    <g transform="translate(0, 102)">
+      <rect width="386" height="72" rx="8" fill="#0c1222" stroke="#1e293b" stroke-width="1" />
+      <!-- Source Badge -->
+      <rect x="12" y="10" width="95" height="16" rx="4" fill="#9a3412" fill-opacity="0.3" stroke="#f97316" stroke-width="0.6" />
+      <text x="18" y="21" font-family="ui-monospace, monospace" font-size="8" font-weight="700" fill="#fb923c">REDDIT · r/GL&amp;R</text>
+
+      <!-- Veracity Pill -->
+      <rect x="290" y="10" width="84" height="16" rx="4" fill="#064e3b" stroke="#10b981" stroke-width="0.6" />
+      <text x="332" y="21" text-anchor="middle" font-family="ui-monospace, monospace" font-size="8" font-weight="700" fill="#34d399">89% CREDIBLE</text>
+
+      <!-- Headline & Snippet -->
+      <text x="12" y="42" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#f8fafc">Voice actor resume confirms Valve "Project White Sands"</text>
+      <text x="12" y="58" font-family="system-ui, sans-serif" font-size="9.5" fill="#94a3b8">Motion capture &amp; voice over logs cross-reference internal Valve single-player codename.</text>
+    </g>
+
+    <!-- Rumor Card 3: SteamDB Build Pipeline Updates -->
+    <g transform="translate(0, 182)">
+      <rect width="386" height="72" rx="8" fill="#0c1222" stroke="#1e293b" stroke-width="1" />
+      <!-- Source Badge -->
+      <rect x="12" y="10" width="85" height="16" rx="4" fill="#1e1b4b" stroke="#818cf8" stroke-width="0.6" />
+      <text x="18" y="21" font-family="ui-monospace, monospace" font-size="8" font-weight="700" fill="#a5b4fc">X · @SteamDB</text>
+
+      <!-- Veracity Pill -->
+      <rect x="290" y="10" width="84" height="16" rx="4" fill="#14532d" stroke="#22c55e" stroke-width="0.6" />
+      <text x="332" y="21" text-anchor="middle" font-family="ui-monospace, monospace" font-size="8" font-weight="700" fill="#4ade80">82% PROBABLE</text>
+
+      <!-- Headline & Snippet -->
+      <text x="12" y="42" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#f8fafc">Private Steam depot 'HLX' updated with 42GB staging build</text>
+      <text x="12" y="58" font-family="system-ui, sans-serif" font-size="9.5" fill="#94a3b8">Branch activity points to closed internal playtests with SteamVR &amp; flatscreen toggles.</text>
+    </g>
   </g>
 </svg>

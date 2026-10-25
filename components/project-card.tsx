@@ -10,7 +10,7 @@ export function ProjectCard({ project }: { project: Project }) {
           <div className="relative aspect-[5/2] w-full overflow-hidden border-b border-zinc-100 bg-zinc-950 dark:border-zinc-800">
             <img
               src={project.previewImage}
-              alt={`${project.title} architecture diagram`}
+              alt={`${project.title} interface preview`}
               width={800}
               height={320}
               loading="lazy"
