@@ -112,7 +112,7 @@ export const siteConfig: SiteConfig = {
   ],
   hero: {
     eyebrow: 'Portfolio & Cultural Index',
-    heading: "I'm here to chew gum and break dependencies, and I'm all out of gum.",
+    heading: "I'm here to chew gum and push directly to main, and I'm all out of gum.",
     primaryCta: {
       label: 'Explore Productions',
       href: '/projects',

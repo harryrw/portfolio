@@ -1,6 +1,6 @@
 # 🦜 Harry's MySpace
 
-> *"I'm here to chew gum and break dependencies, and I'm all out of gum."*
+> *"I'm here to chew gum and push directly to main, and I'm all out of gum."*
 
 Welcome to **Harry's MySpace** — a personal corner of the internet combining engineering productions, software architecture, and curated cultural consumptions (films, games, books, and music).
 
