@@ -2,7 +2,7 @@
   {
     "slug": "gaminglandr-leaks-radar",
     "title": "GamingLANDR.com",
-    "tagline": "Cosmonaut-themed intelligence hub aggregating gaming leaks and rumors across Twitter, Bluesky, and Reddit.",
+    "tagline": "Cosmonaut-themed intelligence hub searching and organizing the latest gaming leaks and rumors from r/gamingleaksandrumors.",
     "featured": true,
     "publishedAt": "2026-11-01",
     "previewImage": "/images/projects/gaminglandr.svg",
@@ -13,21 +13,20 @@
     "techStack": [
       { "name": "Next.js", "category": "Frontend" },
       { "name": "TypeScript", "category": "Frontend" },
-      { "name": "Bluesky API", "category": "Backend" },
       { "name": "Reddit API", "category": "Backend" },
       { "name": "Tailwind CSS", "category": "Frontend" },
-      { "name": "Real-time Telemetry", "category": "Architecture" }
+      { "name": "Search Architecture", "category": "Architecture" }
     ],
-    "overview": "GamingLANDR.com is an upcoming space/cosmonaut-themed intelligence hub tracking and cross-verifying gaming industry leaks and rumors. It synthesizes real-time chatter and breaking reports from X (Twitter), the AT Protocol (Bluesky), and r/GamingLeaksAndRumours into a unified radar feed with credibility scoring and spoiler controls.",
-    "architectureOverview": "Multi-stream event listeners poll and webhook-subscribe to Bluesky, Twitter/X firehoses, and Reddit feeds. Ingested claims are normalized, deduplicated via semantic vector similarity, and relayed to cosmonaut HUD clients over WebSockets.",
+    "overview": "GamingLANDR.com is an upcoming space/cosmonaut-themed intelligence hub that pulls the latest leaks and rumors by searching posts for any game directly on the r/gamingleaksandrumors subreddit. It organizes scattered community threads, datamines, and developer leaks into clean game-by-game dossiers featuring game art and direct source attribution.",
+    "architectureOverview": "A serverless crawler and Reddit API search pipeline queries r/gamingleaksandrumors by game title, extracting and normalizing thread discussions, datamines, and actor resumes into structured topic cards with chronological caching.",
     "takeaways": [
       {
-        "challenge": "Aggregating unformatted rumor threads across multiple disparate social APIs with varying rate limits.",
-        "solution": "Architected an edge queue consumer with priority backoff and automatic cross-platform claim deduplication."
+        "challenge": "Filtering relevant rumor threads and separating genuine datamines from noise on Reddit.",
+        "solution": "Engineered automated flair and keyword clustering that groups duplicate submissions into single unified game topics."
       },
       {
-        "challenge": "Filtering signal from noise while preserving chronological breaking alerts.",
-        "solution": "Designed a community-weighted veracity rating system alongside spoiler tagging and provenance chain inspection."
+        "challenge": "Preserving fast search response times across large archives of community submissions.",
+        "solution": "Designed edge caching on top of Reddit search endpoints with intelligent invalidation on breaking post spikes."
       }
     ]
   },

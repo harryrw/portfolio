@@ -90,7 +90,7 @@ export function SolarDistance({ className }: { className?: string }) {
           {formattedSunKm} km
         </span>
         <span className="text-[10px] uppercase tracking-wider text-zinc-400">
-          to Sun
+          from Sun
         </span>
       </div>
 
