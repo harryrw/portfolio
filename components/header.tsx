@@ -8,12 +8,9 @@ import { siteConfig } from '@/data/site';
 import { ThemeToggle } from '@/components/theme-toggle';
 import { NavToucan } from '@/components/nav-toucan';
 import { SolarDistance } from '@/components/solar-distance';
-import { DesktopNav } from '@/components/desktop-nav';
-import { usePageTransition } from '@/components/page-transition';
 
 export function Header() {
   const pathname = usePathname();
-  const { navigateWithTransition } = usePageTransition();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
@@ -22,8 +19,33 @@ export function Header() {
         {/* Left: Theme-Aware Toucan Home Button */}
         <NavToucan />
 
-        {/* Center: Desktop Navigation with sliding highlight */}
-        <DesktopNav />
+        {/* Center: Desktop Navigation */}
+        <nav aria-label={siteConfig.navAriaLabel} className="hidden md:block">
+          <ul className="flex items-center gap-1">
+            {siteConfig.navItems.map((item) => {
+              const isActive =
+                item.href === '/'
+                  ? pathname === '/'
+                  : pathname.startsWith(item.href);
+
+              return (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    aria-current={isActive ? 'page' : undefined}
+                    className={`inline-flex min-h-9 items-center rounded-md px-3 py-1.5 text-sm font-medium transition-colors ${
+                      isActive
+                        ? 'bg-emerald-50 text-emerald-700 dark:bg-emerald-950/60 dark:text-emerald-300'
+                        : 'text-zinc-600 hover:bg-zinc-100 hover:text-zinc-900 dark:text-zinc-400 dark:hover:bg-zinc-900 dark:hover:text-zinc-100'
+                    }`}
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </nav>
 
         {/* Right Corner: Live Celestial Distance + Theme Toggle */}
         <div className="flex items-center gap-2">
@@ -70,19 +92,7 @@ export function Header() {
                   <Link
                     href={item.href}
                     aria-current={isActive ? 'page' : undefined}
-                    onClick={(e) => {
-                      setMobileMenuOpen(false);
-                      if (
-                        !e.metaKey &&
-                        !e.ctrlKey &&
-                        !e.altKey &&
-                        !e.shiftKey &&
-                        e.button === 0
-                      ) {
-                        e.preventDefault();
-                        navigateWithTransition(item.href);
-                      }
-                    }}
+                    onClick={() => setMobileMenuOpen(false)}
                     className={`flex min-h-10 items-center rounded-md px-3 py-2 text-sm font-medium transition-colors ${
                       isActive
                         ? 'bg-emerald-50 text-emerald-700 dark:bg-emerald-950/60 dark:text-emerald-300'

@@ -5,7 +5,6 @@ import { siteConfig } from '@/data/site';
 import { ProjectCard } from '@/components/project-card';
 import { MediaCard } from '@/components/media-card';
 import { DynamicAvatar } from '@/components/dynamic-avatar';
-import { TransitionLink } from '@/components/transition-link';
 
 export default function HomePage() {
   const projects = getFeaturedProjects();
@@ -36,19 +35,19 @@ export default function HomePage() {
               {siteConfig.hero.heading}
             </h1>
             <div className="mt-6 flex flex-wrap items-center gap-3">
-              <TransitionLink
+              <Link
                 href={siteConfig.hero.primaryCta.href}
                 className="inline-flex min-h-10 items-center gap-2 rounded-lg bg-emerald-600 px-4 py-2 text-sm font-medium text-white shadow-xs transition-all hover:-translate-y-0.5 hover:bg-emerald-700 dark:bg-emerald-600 dark:hover:bg-emerald-500"
               >
                 <span>{siteConfig.hero.primaryCta.label}</span>
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
-              </TransitionLink>
-              <TransitionLink
+              </Link>
+              <Link
                 href={siteConfig.hero.secondaryCta.href}
                 className="inline-flex min-h-10 items-center gap-2 rounded-lg border border-zinc-300 bg-white px-4 py-2 text-sm font-medium text-zinc-700 transition-all hover:-translate-y-0.5 hover:bg-zinc-50 hover:text-zinc-900 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-200 dark:hover:bg-zinc-800 dark:hover:text-white"
               >
                 <span>{siteConfig.hero.secondaryCta.label}</span>
-              </TransitionLink>
+              </Link>
             </div>
           </div>
 
@@ -70,13 +69,13 @@ export default function HomePage() {
               {siteConfig.sections.projectsSubheading}
             </p>
           </div>
-          <TransitionLink
+          <Link
             href="/projects"
             className="inline-flex items-center gap-1.5 text-sm font-medium text-emerald-600 hover:text-emerald-700 dark:text-emerald-400 dark:hover:text-emerald-300"
           >
             <span>{siteConfig.sections.viewAllProjectsLabel}</span>
             <ArrowRight className="h-4 w-4" aria-hidden="true" />
-          </TransitionLink>
+          </Link>
         </div>
 
         <ul role="list" className="grid gap-6 md:grid-cols-2">
@@ -97,13 +96,13 @@ export default function HomePage() {
               {siteConfig.sections.logsSubheading}
             </p>
           </div>
-          <TransitionLink
+          <Link
             href="/logs"
             className="inline-flex items-center gap-1.5 text-sm font-medium text-emerald-600 hover:text-emerald-700 dark:text-emerald-400 dark:hover:text-emerald-300"
           >
             <span>{siteConfig.sections.viewAllLogsLabel}</span>
             <ArrowRight className="h-4 w-4" aria-hidden="true" />
-          </TransitionLink>
+          </Link>
         </div>
 
         <ul role="list" className="grid gap-6 sm:grid-cols-2">
