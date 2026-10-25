@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation';
 import { Menu, Wifi, X } from 'lucide-react';
 import { siteConfig } from '@/data/site';
 import { ThemeToggle } from '@/components/theme-toggle';
+import { NavToucan } from '@/components/nav-toucan';
 
 export function Header() {
   const pathname = usePathname();
@@ -14,20 +15,8 @@ export function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-zinc-200/80 bg-white/90 backdrop-blur-md transition-colors dark:border-zinc-800/80 dark:bg-zinc-950/90">
       <div className="mx-auto flex h-16 max-w-5xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        {/* Left: Toucan Home Button without "Harry" text */}
-        <Link
-          href="/"
-          aria-label="Home"
-          className="group relative flex h-10 w-10 items-center justify-center rounded-xl p-0.5 transition-transform duration-300 hover:scale-105"
-        >
-          <img
-            src="/images/toucan-nav.png"
-            alt="Toucan home logo"
-            width={38}
-            height={38}
-            className="h-9 w-9 rounded-full border border-emerald-300/80 object-cover shadow-2xs transition-all duration-300 group-hover:border-emerald-500 group-hover:shadow-xs dark:border-emerald-700/60"
-          />
-        </Link>
+        {/* Left: Theme-Aware Toucan Home Button */}
+        <NavToucan />
 
         {/* Center: Desktop Navigation */}
         <nav aria-label={siteConfig.navAriaLabel} className="hidden md:block">

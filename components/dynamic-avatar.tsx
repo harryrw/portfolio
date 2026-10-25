@@ -86,10 +86,22 @@ export function DynamicAvatar() {
           <div className={`absolute inset-0 bg-gradient-to-b ${current.skyGradient} transition-all duration-700`} />
           <div className={`absolute rounded-full transition-all duration-700 ${current.sunPos} ${current.sunColor}`} />
 
+          {/* Continuous Vector Landscape Backing */}
           <svg viewBox="0 0 200 200" className="absolute inset-0 h-full w-full pointer-events-none" preserveAspectRatio="none">
-            <path d="M-10 160 Q 50 110, 110 145 T 210 150 L 210 200 L -10 200 Z" fill={current.mountainBack} opacity="0.75" />
-            <path d="M-10 175 Q 80 140, 160 165 T 220 180 L 220 200 L -10 200 Z" fill={current.mountainFront} opacity="0.9" />
-            <rect x="0" y="185" width="200" height="20" fill={current.ground} />
+            {/* Distant Rolling Mountains */}
+            <path
+              d="M-20 135 Q 40 85, 100 115 T 220 120 L 220 220 L -20 220 Z"
+              fill={current.mountainBack}
+              opacity="0.8"
+            />
+            {/* Midground Rolling Hills - Extends up to shoulder/neck height */}
+            <path
+              d="M-20 150 Q 60 110, 140 135 T 220 145 L 220 220 L -20 220 Z"
+              fill={current.mountainFront}
+              opacity="0.95"
+            />
+            {/* Solid Foreground Ground Layer filling the bottom half */}
+            <rect x="0" y="160" width="200" height="40" fill={current.ground} />
           </svg>
 
           <img
