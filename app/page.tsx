@@ -31,10 +31,10 @@ export default function HomePage() {
 
         <div className="relative grid items-center gap-8 lg:grid-cols-12">
           <div className="lg:col-span-8">
-            <h1 className="text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 sm:text-4xl">
+            <h1 className="font-serif text-3xl font-normal tracking-tight text-zinc-900 text-balance leading-[1.15] dark:text-zinc-100 sm:text-4xl lg:text-5xl">
               {siteConfig.hero.heading}
             </h1>
-            <p className="mt-4 max-w-2xl text-base leading-relaxed text-zinc-600 dark:text-zinc-400 sm:text-lg">
+            <p className="mt-4 max-w-2xl text-base leading-relaxed text-zinc-600 text-pretty dark:text-zinc-400 sm:text-lg">
               {siteConfig.hero.summary}
             </p>
             <div className="mt-6 flex flex-wrap items-center gap-3">

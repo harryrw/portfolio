@@ -1,9 +1,41 @@
 @import "tailwindcss";
+@import "@fontsource/commit-mono/400.css";
+@import "@fontsource/commit-mono/700.css";
+@import "../public/fonts/general-sans/general-sans.css";
+@import "../public/fonts/instrument-serif/instrument-serif.css";
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* =========================================================================
+   Typography System
+   - Display & Review Headlines: Instrument Serif
+   - UI Controls, Navigation & Body: General Sans (with system-ui fallback)
+   - Metadata, Tags & Ratings ([5★], PC, 2024): Commit Mono
+   
+   PREVIOUS CONFIGURATION (FOR EASY REVERSION):
+   - Sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif
+   - Mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace
+   - Serif: Georgia, Cambria, 'Times New Roman', Times, serif
+   
+   HOW TO REVERT:
+   1. In app/globals.css, remove the font @imports at the top.
+   2. Reset @theme font variables:
+      --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+   3. In app/page.tsx & components/media-card.tsx, remove 'font-serif' and 'font-mono' classes.
+   ========================================================================= */
+
+@theme {
+  --font-serif: 'Instrument Serif', Georgia, serif;
+  --font-sans: 'General Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'Commit Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
 :root {
   color-scheme: light dark;
+  --font-serif: 'Instrument Serif', Georgia, serif;
+  --font-sans: 'General Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'Commit Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 
   &:has(> head > meta[name="color-scheme"][content="dark"]) {
     color-scheme: dark;
@@ -37,6 +69,16 @@
   html {
     scroll-behavior: smooth;
     accent-color: #059669;
+    font-family: 'General Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  body {
+    font-family: 'General Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  /* Prevent widows and orphans in copy across browsers */
+  p, h1, h2, h3, h4, li {
+    text-wrap: pretty;
   }
 
   :where(a:any-link, button):focus-visible {
