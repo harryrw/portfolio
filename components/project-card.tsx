@@ -39,17 +39,30 @@ export function ProjectCard({ project }: { project: Project }) {
       </div>
 
       <div className="space-y-3 px-6 pb-6">
-        {project.links.github && (
+        {(project.links.github || project.links.liveDemo) && (
           <div className="flex items-center gap-3 text-xs font-medium">
-            <a
-              href={project.links.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 text-emerald-700 hover:text-emerald-800 dark:text-emerald-400 dark:hover:text-emerald-300"
-            >
-              <span>Source Code</span>
-              <ExternalLink className="h-3 w-3" aria-hidden="true" />
-            </a>
+            {project.links.github && (
+              <a
+                href={project.links.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-emerald-700 hover:text-emerald-800 dark:text-emerald-400 dark:hover:text-emerald-300"
+              >
+                <span>Source Code</span>
+                <ExternalLink className="h-3 w-3" aria-hidden="true" />
+              </a>
+            )}
+            {project.links.liveDemo && (
+              <a
+                href={project.links.liveDemo}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-200"
+              >
+                <span>Live Demo</span>
+                <ExternalLink className="h-3 w-3" aria-hidden="true" />
+              </a>
+            )}
           </div>
         )}
         <ul

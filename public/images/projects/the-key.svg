@@ -1,0 +1,156 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 320" fill="none">
+  <defs>
+    <!-- Background court surface gradient -->
+    <linearGradient id="courtBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#09090b" />
+      <stop offset="40%" stop-color="#0b1713" />
+      <stop offset="80%" stop-color="#062e22" />
+      <stop offset="100%" stop-color="#09090b" />
+    </linearGradient>
+
+    <!-- The Painted Key gradient -->
+    <linearGradient id="theKeyPaint" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#047857" stop-opacity="0.85" />
+      <stop offset="50%" stop-color="#059669" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#047857" stop-opacity="0.85" />
+    </linearGradient>
+
+    <!-- Radial court spotlight glow -->
+    <radialGradient id="keySpotlight" cx="30%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.25" />
+      <stop offset="50%" stop-color="#059669" stop-opacity="0.08" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Subtle court grip / grid pattern -->
+    <pattern id="courtGrid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#34d399" stroke-width="0.5" stroke-opacity="0.12" />
+    </pattern>
+  </defs>
+
+  <!-- Court Background -->
+  <rect width="800" height="320" fill="url(#courtBg)" />
+  <rect width="800" height="320" fill="url(#keySpotlight)" />
+  <rect width="800" height="320" fill="url(#courtGrid)" />
+
+  <!-- ============================================================
+       BASKETBALL COURT: THE KEY (LANE & FREE THROW CIRCLE)
+       ============================================================ -->
+  <g transform="translate(45, 160)">
+    <!-- Baseline Line -->
+    <line x1="0" y1="-140" x2="0" y2="140" stroke="#f4f4f5" stroke-width="2" stroke-opacity="0.6" />
+
+    <!-- 3-Point Arc sweeping around The Key -->
+    <path d="M 0,-125 L 55,-125 A 190 190 0 0 1 55,125 L 0,125" fill="none" stroke="#34d399" stroke-width="1.5" stroke-opacity="0.4" stroke-dasharray="4 3" />
+
+    <!-- THE KEY (THE PAINTED AREA) -->
+    <!-- Lane Rectangle (The Paint) -->
+    <rect x="0" y="-56" width="160" height="112" fill="url(#theKeyPaint)" stroke="#f4f4f5" stroke-width="2" stroke-opacity="0.9" />
+
+    <!-- Painted Key Wood Plank Accents -->
+    <line x1="0" y1="-28" x2="160" y2="-28" stroke="#ffffff" stroke-width="0.75" stroke-opacity="0.15" />
+    <line x1="0" y1="0" x2="160" y2="0" stroke="#ffffff" stroke-width="0.75" stroke-opacity="0.2" stroke-dasharray="6 4" />
+    <line x1="0" y1="28" x2="160" y2="28" stroke="#ffffff" stroke-width="0.75" stroke-opacity="0.15" />
+
+    <!-- The Free Throw Circle (Top of the Key) -->
+    <!-- Solid Outer Arc (Top of the Key) -->
+    <path d="M 160,-56 A 56 56 0 0 1 160,56" fill="#065f46" fill-opacity="0.6" stroke="#f4f4f5" stroke-width="2" />
+    <!-- Dashed Inner Arc (Inside the Lane) -->
+    <path d="M 160,-56 A 56 56 0 0 0 160,56" fill="none" stroke="#f4f4f5" stroke-width="1.5" stroke-dasharray="6 6" stroke-opacity="0.8" />
+
+    <!-- Free-Throw Line (The Top Border of the Key Lane) -->
+    <line x1="160" y1="-56" x2="160" y2="56" stroke="#ffffff" stroke-width="2.5" />
+
+    <!-- Rebound Hash Marks along The Key boundary -->
+    <line x1="45" y1="-56" x2="45" y2="-64" stroke="#ffffff" stroke-width="2" />
+    <line x1="75" y1="-56" x2="75" y2="-64" stroke="#ffffff" stroke-width="2" />
+    <line x1="105" y1="-56" x2="105" y2="-64" stroke="#ffffff" stroke-width="2" />
+    <line x1="135" y1="-56" x2="135" y2="-64" stroke="#ffffff" stroke-width="2" />
+
+    <line x1="45" y1="56" x2="45" y2="64" stroke="#ffffff" stroke-width="2" />
+    <line x1="75" y1="56" x2="75" y2="64" stroke="#ffffff" stroke-width="2" />
+    <line x1="105" y1="56" x2="105" y2="64" stroke="#ffffff" stroke-width="2" />
+    <line x1="135" y1="56" x2="135" y2="64" stroke="#ffffff" stroke-width="2" />
+
+    <!-- Backboard and Basket Hoop Structure -->
+    <!-- Backboard Support Arm & Board -->
+    <line x1="0" y1="0" x2="28" y2="0" stroke="#71717a" stroke-width="3" />
+    <line x1="28" y1="-28" x2="28" y2="28" stroke="#ffffff" stroke-width="3" stroke-linecap="round" />
+    <!-- Restricted Area Arc (4ft under basket) -->
+    <path d="M 28,-22 A 22 22 0 0 1 28,22" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-opacity="0.85" />
+    <!-- Basket Rim / Hoop (Orange Ring) -->
+    <circle cx="36" cy="0" r="8" fill="none" stroke="#f97316" stroke-width="2.5" />
+    <circle cx="36" cy="0" r="3" fill="#f97316" fill-opacity="0.3" />
+
+    <!-- "THE KEY" Label on the Paint -->
+    <text x="80" y="4" text-anchor="middle" fill="#ffffff" font-family="ui-monospace, monospace" font-size="10" font-weight="800" letter-spacing="3" opacity="0.45">THE KEY</text>
+  </g>
+
+  <!-- ============================================================
+       MAP & PICKUP GAME MATCHMAKING TELEMETRY (RIGHT PANEL)
+       ============================================================ -->
+  <!-- Connecting Geospatial Pulse Stream -->
+  <path d="M 265 160 C 310 160, 320 100, 370 100" stroke="#34d399" stroke-width="1.5" stroke-dasharray="4 4" fill="none">
+    <animate attributeName="stroke-dashoffset" values="16;0" dur="1.5s" repeatCount="indefinite" />
+  </path>
+  <path d="M 265 160 L 370 160" stroke="#10b981" stroke-width="1.5" stroke-dasharray="4 4" fill="none">
+    <animate attributeName="stroke-dashoffset" values="16;0" dur="1.2s" repeatCount="indefinite" />
+  </path>
+  <path d="M 265 160 C 310 160, 320 220, 370 220" stroke="#34d399" stroke-width="1.5" stroke-dasharray="4 4" fill="none">
+    <animate attributeName="stroke-dashoffset" values="16;0" dur="1.8s" repeatCount="indefinite" />
+  </path>
+
+  <!-- Active Court Card 1: Princes Park (Live Run) -->
+  <g transform="translate(370, 48)">
+    <rect width="385" height="64" rx="12" fill="#18181b" stroke="#10b981" stroke-width="1.5" stroke-opacity="0.8" />
+    <!-- Pulsing Live Court Pin -->
+    <circle cx="28" cy="32" r="14" fill="#10b981" fill-opacity="0.15" />
+    <circle cx="28" cy="32" r="6" fill="#10b981">
+      <animate attributeName="r" values="4;8;4" dur="2s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="28" cy="32" r="12" fill="none" stroke="#34d399" stroke-width="1">
+      <animate attributeName="r" values="6;16;6" dur="2s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="1;0;1" dur="2s" repeatCount="indefinite" />
+    </circle>
+    <!-- Court Info -->
+    <text x="56" y="27" fill="#f4f4f5" font-family="'General Sans', system-ui, sans-serif" font-size="13" font-weight="600">Princes Park Courts · Full Court</text>
+    <text x="56" y="47" fill="#34d399" font-family="'Commit Mono', monospace" font-size="11" font-weight="500">4v4 Run Active · 8/10 Players · Next Game: 5:45 PM</text>
+    <!-- Badge -->
+    <rect x="310" y="20" width="60" height="24" rx="6" fill="#064e3b" stroke="#059669" stroke-width="1" />
+    <text x="340" y="36" text-anchor="middle" fill="#34d399" font-family="'Commit Mono', monospace" font-size="10" font-weight="700">RUNNING</text>
+  </g>
+
+  <!-- Active Court Card 2: Carlton Gardens (Assembling 3v3) -->
+  <g transform="translate(370, 128)">
+    <rect width="385" height="64" rx="12" fill="#18181b" stroke="#27272a" stroke-width="1.5" />
+    <!-- Orange Status Pin -->
+    <circle cx="28" cy="32" r="6" fill="#f59e0b" />
+    <circle cx="28" cy="32" r="12" fill="none" stroke="#fbbf24" stroke-width="1" stroke-opacity="0.5" />
+    <!-- Court Info -->
+    <text x="56" y="27" fill="#f4f4f5" font-family="'General Sans', system-ui, sans-serif" font-size="13" font-weight="600">Carlton Gardens North · Double Rim</text>
+    <text x="56" y="47" fill="#a1a1aa" font-family="'Commit Mono', monospace" font-size="11">Pickup Queue: 5/6 Needed for 3v3 · Lights On</text>
+    <!-- Badge -->
+    <rect x="306" y="20" width="64" height="24" rx="6" fill="#27272a" stroke="#3f3f46" stroke-width="1" />
+    <text x="338" y="36" text-anchor="middle" fill="#fbbf24" font-family="'Commit Mono', monospace" font-size="10" font-weight="700">5/6 RSVP</text>
+  </g>
+
+  <!-- Active Court Card 3: Fitzroy Hoops (Check-In Radar) -->
+  <g transform="translate(370, 208)">
+    <rect width="385" height="64" rx="12" fill="#18181b" stroke="#27272a" stroke-width="1.5" />
+    <!-- Cyan Status Pin -->
+    <circle cx="28" cy="32" r="6" fill="#38bdf8" />
+    <!-- Court Info -->
+    <text x="56" y="27" fill="#f4f4f5" font-family="'General Sans', system-ui, sans-serif" font-size="13" font-weight="600">Fitzroy Recreation Court · Asphalt</text>
+    <text x="56" y="47" fill="#a1a1aa" font-family="'Commit Mono', monospace" font-size="11">Open Shootaround · 3 Hoopers Practicing · Net Intact</text>
+    <!-- Badge -->
+    <rect x="310" y="20" width="60" height="24" rx="6" fill="#0c4a6e" stroke="#0284c7" stroke-width="1" />
+    <text x="340" y="36" text-anchor="middle" fill="#38bdf8" font-family="'Commit Mono', monospace" font-size="10" font-weight="700">OPEN</text>
+  </g>
+
+  <!-- Top Telemetry Status Pill -->
+  <g transform="translate(45, 20)">
+    <rect width="265" height="26" rx="13" fill="#09090b" stroke="#34d399" stroke-width="1" stroke-opacity="0.4" />
+    <circle cx="16" cy="13" r="4" fill="#34d399" />
+    <text x="28" y="17" fill="#34d399" font-family="'Commit Mono', monospace" font-size="10" font-weight="600" letter-spacing="1">THE KEY · BASKETBALL COURT RADAR</text>
+  </g>
+</svg>

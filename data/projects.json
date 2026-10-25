@@ -32,33 +32,34 @@
     ]
   },
   {
-    "slug": "edge-feature-flag-engine",
-    "title": "Vanguard Flags",
-    "tagline": "Zero-latency feature flag evaluation engine and real-time telemetry control plane.",
+    "slug": "the-key-basketball",
+    "title": "The Key",
+    "tagline": "Interactive court locator and real-time pickup matchmaking platform for streetballers.",
     "featured": true,
-    "publishedAt": "2026-09-02",
-    "previewImage": "/images/projects/vanguard-flags.svg",
+    "publishedAt": "2026-11-15",
+    "previewImage": "/images/projects/the-key.svg",
     "links": {
-      "github": "https://github.com/harryrw/vanguard-flags",
-      "liveDemo": "https://portfoliohrw-xi.vercel.app/projects"
+      "github": "https://github.com/harryrw/the-key",
+      "liveDemo": "https://thekey-basketball.vercel.app"
     },
     "techStack": [
-      { "name": "React", "category": "Frontend" },
-      { "name": "Node.js", "category": "Backend" },
-      { "name": "Redis", "category": "Database" },
-      { "name": "GitHub Actions", "category": "DevOps" },
-      { "name": "Edge Computing", "category": "Architecture" }
+      { "name": "Next.js 15", "category": "Frontend" },
+      { "name": "MapLibre GL", "category": "Frontend" },
+      { "name": "PostGIS", "category": "Database" },
+      { "name": "WebSockets", "category": "Architecture" },
+      { "name": "Tailwind CSS", "category": "Frontend" },
+      { "name": "Geolocation API", "category": "Frontend" }
     ],
-    "overview": "Vanguard Flags enables engineering teams to decouple deployment from release using deterministic percentage rollouts, cohort targeting rules, and instant kill-switches synchronized globally.",
-    "architectureOverview": "Rule definitions are compiled into compact JSON ASTs in the control plane, replicated to Redis edge caches, and streamed to connected SDK clients over Server-Sent Events (SSE).",
+    "overview": "The Key is a basketball court discovery and pickup matchmaking platform designed for streetballers. Named after the painted area under the basket where games are won and lost, the platform maps nearby outdoor and indoor courts with crowd-verified conditions (rim height, surface grip, net quality, night lighting) and lets players organize quick 3v3 and 5v5 pickup runs with live headcount tracking.",
+    "architectureOverview": "Geospatial radius queries and bounding-box indexing are powered by PostgreSQL with PostGIS. Real-time court presence and pickup queue state are managed via WebSockets with Redis pub/sub backplanes, ensuring instantaneous updates when players RSVP or check into a court.",
     "takeaways": [
       {
-        "challenge": "Inconsistent bucketing across web and backend SDKs during gradual percentage rollouts.",
-        "solution": "Standardized on a unified MurmurHash3 specification with shared cross-language conformance test vectors."
+        "challenge": "Preventing ghost check-ins and keeping live court occupancy counts accurate.",
+        "solution": "Engineered automated geofencing with time-decayed presence heartbeats so player statuses clear automatically when leaving the court perimeter."
       },
       {
-        "challenge": "Stale flag rules when network connectivity drops between application nodes and the control plane.",
-        "solution": "Built a local disk-backed fallback snapshot store with exponential backoff reconnection on SSE streams."
+        "challenge": "Coordinating spontaneous pickup games across fragmented group chats.",
+        "solution": "Designed dynamic court lobbies with RSVP thresholds that send push notifications once a court reaches the required quorum (e.g. 6 players for 3v3)."
       }
     ]
   }
