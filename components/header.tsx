@@ -47,7 +47,7 @@ export function Header() {
           </ul>
         </nav>
 
-        {/* Right Corner: Live Earth-Sun Distance + Theme Toggle */}
+        {/* Right Corner: Live Celestial Distance + Theme Toggle */}
         <div className="flex items-center gap-2">
           <SolarDistance />
           <ThemeToggle />
@@ -106,9 +106,12 @@ export function Header() {
             })}
           </ul>
 
-          {/* Mobile Earth-Sun Live Distance */}
+          {/* Mobile Celestial Live Distance */}
           <div className="mt-3 flex items-center justify-between border-t border-zinc-100 pt-3 dark:border-zinc-800">
-            <span className="text-xs text-zinc-500 dark:text-zinc-400">Earth to Sun</span>
+            <span className="text-xs text-zinc-500 dark:text-zinc-400">
+              <span className="dark:hidden">Distance to Sun</span>
+              <span className="hidden dark:inline">Distance from Moon</span>
+            </span>
             <SolarDistance className="inline-flex" />
           </div>
         </nav>
