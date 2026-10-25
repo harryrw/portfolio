@@ -126,10 +126,10 @@ export const siteConfig: SiteConfig = {
   },
   sections: {
     projectsHeading: 'Featured Productions',
-    projectsSubheading: 'Selected case studies in distributed architecture and developer tooling.',
+    projectsSubheading: 'the latest and greatest',
     viewAllProjectsLabel: 'All productions',
     logsHeading: 'Recent Consumptions',
-    logsSubheading: 'Notes on watching, playing, and listening.',
+    logsSubheading: 'what i put into my eyes and ears',
     viewAllLogsLabel: 'All consumptions',
     featuredBadge: 'Featured',
     recommendedBadge: 'Recommended',

@@ -20,16 +20,11 @@ export function ProjectCard({ project }: { project: Project }) {
         )}
 
         <div className="p-6">
-          <div className="flex items-center justify-between gap-2">
+          <div className="flex items-center gap-2">
             <span className="inline-flex items-center gap-1.5 text-xs font-medium text-zinc-500 dark:text-zinc-400">
               <FolderGit2 className="h-4 w-4 text-emerald-600 dark:text-emerald-400" aria-hidden="true" />
               <time dateTime={project.publishedAt}>{project.publishedAt}</time>
             </span>
-            {project.featured && (
-              <span className="rounded-full border border-emerald-200/60 bg-emerald-50 px-2.5 py-0.5 text-xs font-medium text-emerald-700 dark:border-emerald-800/60 dark:bg-emerald-950/60 dark:text-emerald-300">
-                {siteConfig.sections.featuredBadge}
-              </span>
-            )}
           </div>
           <h3 className="mt-3 text-lg font-semibold text-zinc-900 transition-colors group-hover:text-emerald-600 dark:text-zinc-100 dark:group-hover:text-emerald-400">
             {project.title}
