@@ -27,7 +27,7 @@ export interface SiteConfig {
   hero: {
     eyebrow: string;
     heading: string;
-    summary: string;
+    summary?: string;
     primaryCta: {
       label: string;
       href: '/projects';
@@ -113,8 +113,6 @@ export const siteConfig: SiteConfig = {
   hero: {
     eyebrow: 'Portfolio & Cultural Index',
     heading: "I'm here to chew gum and break dependencies, and I'm all out of gum.",
-    summary:
-      'Exploring distributed systems, resilient frontend architecture, and the films, games, and records shaping how I think about craft.',
     primaryCta: {
       label: 'Explore Productions',
       href: '/projects',

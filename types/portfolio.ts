@@ -38,7 +38,7 @@ export interface Project {
 
 export type MediaCategory = 'watching' | 'playing' | 'listening' | 'reading';
 
-export type RatingScore = 1 | 2 | 3 | 4 | 5; // 1-5 star scale
+export type RatingScore = 1 | 1.5 | 2 | 2.5 | 3 | 3.5 | 4 | 4.5 | 5; // 1-5 star scale (supports half-stars)
 
 export interface BaseMediaEntry {
   id: string;

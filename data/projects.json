@@ -2,7 +2,7 @@
   {
     "slug": "gaminglandr-leaks-radar",
     "title": "GamingLANDR.com",
-    "tagline": "Cosmonaut-themed intelligence hub searching and organizing the latest gaming leaks and rumors from r/gamingleaksandrumors.",
+    "tagline": "Cosmonaut-themed intelligence hub searching and organizing the latest gaming leaks and rumors from across the world wide web.",
     "featured": true,
     "publishedAt": "2026-11-01",
     "previewImage": "/images/projects/gaminglandr.svg",
@@ -13,20 +13,20 @@
     "techStack": [
       { "name": "Next.js", "category": "Frontend" },
       { "name": "TypeScript", "category": "Frontend" },
-      { "name": "Reddit API", "category": "Backend" },
+      { "name": "Web Scraping & APIs", "category": "Backend" },
       { "name": "Tailwind CSS", "category": "Frontend" },
       { "name": "Search Architecture", "category": "Architecture" }
     ],
-    "overview": "GamingLANDR.com is an upcoming space/cosmonaut-themed intelligence hub that pulls the latest leaks and rumors by searching posts for any game directly on the r/gamingleaksandrumors subreddit. It organizes scattered community threads, datamines, and developer leaks into clean game-by-game dossiers featuring game art and direct source attribution.",
-    "architectureOverview": "A serverless crawler and Reddit API search pipeline queries r/gamingleaksandrumors by game title, extracting and normalizing thread discussions, datamines, and actor resumes into structured topic cards with chronological caching.",
+    "overview": "GamingLANDR.com is an upcoming space/cosmonaut-themed intelligence hub that pulls the latest leaks and rumors by searching discussions, datamines, and breaking reports from across the world wide web. It organizes scattered community chatter, forums, and developer leaks into clean game-by-game dossiers featuring game art and direct source attribution.",
+    "architectureOverview": "A distributed crawler and web search aggregation pipeline scans trusted gaming communities, datamining depots, and web sources by game title, extracting and normalizing rumor reports into structured topic cards with chronological caching.",
     "takeaways": [
       {
-        "challenge": "Filtering relevant rumor threads and separating genuine datamines from noise on Reddit.",
-        "solution": "Engineered automated flair and keyword clustering that groups duplicate submissions into single unified game topics."
+        "challenge": "Filtering relevant rumor reports and separating genuine datamines from noise across the web.",
+        "solution": "Engineered automated keyword clustering and semantic verification that groups duplicate submissions into single unified game topics."
       },
       {
-        "challenge": "Preserving fast search response times across large archives of community submissions.",
-        "solution": "Designed edge caching on top of Reddit search endpoints with intelligent invalidation on breaking post spikes."
+        "challenge": "Preserving fast search response times across large archives of web submissions.",
+        "solution": "Designed edge caching on top of web search endpoints with intelligent invalidation on breaking news spikes."
       }
     ]
   },

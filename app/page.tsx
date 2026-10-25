@@ -34,9 +34,6 @@ export default function HomePage() {
             <h1 className="text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 sm:text-4xl">
               {siteConfig.hero.heading}
             </h1>
-            <p className="mt-4 max-w-2xl text-base leading-relaxed text-zinc-600 dark:text-zinc-400 sm:text-lg">
-              {siteConfig.hero.summary}
-            </p>
             <div className="mt-6 flex flex-wrap items-center gap-3">
               <Link
                 href={siteConfig.hero.primaryCta.href}
