@@ -126,10 +126,10 @@ export const siteConfig: SiteConfig = {
   },
   sections: {
     projectsHeading: 'Featured Productions',
-    projectsSubheading: 'the latest and greatest',
+    projectsSubheading: 'The latest and greatest.',
     viewAllProjectsLabel: 'All productions',
     logsHeading: 'Recent Consumptions',
-    logsSubheading: 'what i put into my eyes and ears',
+    logsSubheading: 'What I put into my eyes and ears.',
     viewAllLogsLabel: 'All consumptions',
     featuredBadge: 'Featured',
     recommendedBadge: 'Recommended',
