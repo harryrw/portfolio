@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 
 export function NavToucan() {
@@ -31,7 +32,7 @@ export function NavToucan() {
         </div>
 
         {/* Clean Toucan Icon */}
-        <img
+        <Image
           src="/images/toucan-clean.png"
           alt="Toucan logo"
           width={34}

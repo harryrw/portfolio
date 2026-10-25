@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import Image from 'next/image';
 
 type TimeOfDay = 'sunrise' | 'midday' | 'sunset' | 'night';
 
@@ -101,11 +102,12 @@ export function DynamicAvatar() {
             <rect x="0" y="160" width="200" height="40" fill={current.ground} />
           </svg>
 
-          <img
+          <Image
             src="/images/avatar-char.png"
             alt="Stylized portrait of Harry"
             width={220}
             height={220}
+            priority
             className="absolute inset-0 h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
           />
         </div>

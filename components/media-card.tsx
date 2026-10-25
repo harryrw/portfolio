@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { BookOpen, Disc3, ExternalLink, Film, Gamepad2, Play, Star } from 'lucide-react';
 import type { MediaEntry } from '@/types/portfolio';
 
@@ -34,12 +35,11 @@ export function MediaCard({ entry }: { entry: MediaEntry }) {
         {/* Iconic Frame / Visual Cover */}
         {entry.coverImage && (
           <div className="relative aspect-video w-full overflow-hidden border-b border-zinc-100 bg-zinc-950 dark:border-zinc-800">
-            <img
+            <Image
               src={entry.coverImage}
               alt={`${entry.title} iconic frame`}
               width={640}
               height={360}
-              loading="lazy"
               className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
             />
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/65 via-black/10 to-transparent" />
