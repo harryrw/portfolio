@@ -13,7 +13,6 @@ interface LandscapeTheme {
   mountainBack: string;
   mountainFront: string;
   ground: string;
-  stars?: boolean;
 }
 
 const THEMES: Record<TimeOfDay, LandscapeTheme> = {
@@ -61,10 +60,8 @@ const THEMES: Record<TimeOfDay, LandscapeTheme> = {
 
 export function DynamicAvatar() {
   const [timeOfDay, setTimeOfDay] = useState<TimeOfDay>('midday');
-  const [mounted, setMounted] = useState<boolean>(false);
 
   useEffect(() => {
-    setMounted(true);
     const hour = new Date().getHours();
     if (hour >= 5 && hour < 9) setTimeOfDay('sunrise');
     else if (hour >= 9 && hour < 17) setTimeOfDay('midday');

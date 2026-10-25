@@ -17,13 +17,6 @@ export interface SiteConfig {
   themeToggleLightLabel: string;
   themeToggleDarkLabel: string;
   navItems: NavItem[];
-  telemetry: {
-    statusLabel: string;
-    httpStatus: string;
-    focusStatus: string;
-    latency: string;
-    region: string;
-  };
   hero: {
     eyebrow: string;
     heading: string;
@@ -97,13 +90,6 @@ export const siteConfig: SiteConfig = {
   mobileMenuCloseLabel: 'Close navigation menu',
   themeToggleLightLabel: 'Switch to light theme',
   themeToggleDarkLabel: 'Switch to dark theme',
-  telemetry: {
-    statusLabel: 'Status: Online',
-    httpStatus: 'HTTP: 200 OK',
-    focusStatus: 'Focus: Active',
-    latency: '14ms',
-    region: 'SYD-1',
-  },
   navItems: [
     { label: 'Home', href: '/' },
     { label: 'Productions', href: '/projects' },
