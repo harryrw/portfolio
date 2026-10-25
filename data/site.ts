@@ -86,7 +86,7 @@ export interface SiteConfig {
 export const siteConfig: SiteConfig = {
   name: 'Harry',
   role: 'Software Engineer',
-  title: 'Harry — Software Engineering & Consumptions',
+  title: "Harry's MySpace",
   description:
     'Personal engineering portfolio, architectural case studies, and curated consumptions across film, games, and music.',
   siteUrl: 'https://portfoliohrw-xi.vercel.app',
@@ -112,7 +112,7 @@ export const siteConfig: SiteConfig = {
   ],
   hero: {
     eyebrow: 'Portfolio & Cultural Index',
-    heading: 'Systems engineering, architectural notes, and consumptions.',
+    heading: "I'm here to chew gum and break dependencies, and I'm all out of gum.",
     summary:
       'Exploring distributed systems, resilient frontend architecture, and the films, games, and records shaping how I think about craft.',
     primaryCta: {
