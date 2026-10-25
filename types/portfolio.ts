@@ -53,6 +53,8 @@ export interface BaseMediaEntry {
   coverImage?: string;
   youtubeUrl?: string;
   youtubeLabel?: string;
+  goodreadsUrl?: string;
+  goodreadsLabel?: string;
   tags: string[];
 }
 

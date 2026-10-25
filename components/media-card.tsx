@@ -78,7 +78,18 @@ export function MediaCard({ entry }: { entry: MediaEntry }) {
       </div>
 
       <div className="space-y-3 px-5 pb-5">
-        {entry.youtubeUrl && (
+        {entry.goodreadsUrl ? (
+          <a
+            href={entry.goodreadsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex w-full items-center justify-center gap-2 rounded-lg border border-emerald-200 bg-emerald-50/80 px-3 py-2 text-xs font-semibold text-emerald-800 transition-colors hover:bg-emerald-600 hover:text-white dark:border-emerald-800/60 dark:bg-emerald-950/50 dark:text-emerald-300 dark:hover:bg-emerald-600 dark:hover:text-white"
+          >
+            <BookOpen className="h-3.5 w-3.5" aria-hidden="true" />
+            <span>{entry.goodreadsLabel ?? 'View on Goodreads'}</span>
+            <ExternalLink className="h-3 w-3 opacity-75" aria-hidden="true" />
+          </a>
+        ) : entry.youtubeUrl ? (
           <a
             href={entry.youtubeUrl}
             target="_blank"
@@ -89,7 +100,7 @@ export function MediaCard({ entry }: { entry: MediaEntry }) {
             <span>{entry.youtubeLabel ?? 'Watch on YouTube'}</span>
             <ExternalLink className="h-3 w-3 opacity-75" aria-hidden="true" />
           </a>
-        )}
+        ) : null}
 
         <ul
           role="list"
