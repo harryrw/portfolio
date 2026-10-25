@@ -102,7 +102,7 @@ export function Header() {
               <span className="dark:hidden">Distance from Sun</span>
               <span className="hidden dark:inline">Distance from Moon</span>
             </span>
-            <SolarDistance className="inline-flex" />
+            <SolarDistance isMobile />
           </div>
         </nav>
       )}

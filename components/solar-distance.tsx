@@ -45,7 +45,13 @@ function calculateEarthMoonDistanceKm(timeMs: number): number {
   return dist;
 }
 
-export function SolarDistance({ className }: { className?: string }) {
+export function SolarDistance({
+  className,
+  isMobile,
+}: {
+  className?: string;
+  isMobile?: boolean;
+}) {
   const [sunKm, setSunKm] = useState<number>(() =>
     calculateEarthSunDistanceKm(Date.now())
   );
@@ -68,12 +74,14 @@ export function SolarDistance({ className }: { className?: string }) {
   const currentAU = (sunKm / 149597870.7).toFixed(4);
   const formattedMoonKm = Math.round(moonKm).toLocaleString();
 
-  const sunDisplayClass = className
-    ? `${className} dark:hidden`
+  const mobile = isMobile ?? Boolean(className);
+
+  const sunDisplayClass = mobile
+    ? 'inline-flex dark:hidden'
     : 'hidden sm:inline-flex dark:hidden';
 
-  const moonDisplayClass = className
-    ? `hidden dark:${className}`
+  const moonDisplayClass = mobile
+    ? 'hidden dark:inline-flex'
     : 'hidden dark:sm:inline-flex';
 
   return (
