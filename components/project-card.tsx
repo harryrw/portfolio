@@ -21,7 +21,7 @@ export function ProjectCard({ project }: { project: Project }) {
 
         <div className="p-6">
           <div className="flex items-center gap-2">
-            <span className="inline-flex items-center gap-1.5 font-mono text-xs font-medium text-zinc-500 dark:text-zinc-400">
+            <span className="inline-flex items-center gap-1.5 text-xs font-medium text-zinc-500 dark:text-zinc-400">
               <FolderGit2 className="h-4 w-4 text-emerald-600 dark:text-emerald-400" aria-hidden="true" />
               <time dateTime={project.publishedAt}>{project.publishedAt}</time>
             </span>
@@ -72,7 +72,7 @@ export function ProjectCard({ project }: { project: Project }) {
           {project.techStack.map((tech) => (
             <li
               key={`${project.slug}-${tech.name}`}
-              className="rounded-md bg-zinc-100 px-2.5 py-1 font-mono text-xs font-medium text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300"
+              className="rounded-md bg-zinc-100 px-2.5 py-1 text-xs font-medium text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300"
             >
               {tech.name}
             </li>

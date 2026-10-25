@@ -44,30 +44,30 @@ export function MediaCard({ entry }: { entry: MediaEntry }) {
             />
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/65 via-black/10 to-transparent" />
             <div className="absolute right-3 bottom-2.5 left-3 flex items-center justify-between">
-              <span className="inline-flex items-center gap-1.5 rounded-md bg-white/95 px-2 py-0.5 font-mono text-xs font-medium text-zinc-900 capitalize shadow-xs backdrop-blur-xs dark:bg-zinc-900/90 dark:text-zinc-100">
+              <span className="inline-flex items-center gap-1.5 rounded-md bg-white/95 px-2 py-0.5 text-xs font-medium text-zinc-900 capitalize shadow-xs backdrop-blur-xs dark:bg-zinc-900/90 dark:text-zinc-100">
                 <CategoryIcon category={entry.category} />
                 <span>{entry.category}</span>
               </span>
               <span
-                className="inline-flex items-center gap-1 rounded-md bg-black/75 px-2 py-0.5 font-mono text-xs font-semibold text-amber-400 backdrop-blur-xs"
+                className="inline-flex items-center gap-1 rounded-md bg-black/75 px-2 py-0.5 text-xs font-semibold text-amber-400 backdrop-blur-xs"
                 aria-label={`Rated ${entry.rating} out of 5 stars`}
               >
                 <Star className="h-3.5 w-3.5 fill-amber-400 text-amber-400" aria-hidden="true" />
-                <span>[{entry.rating}★]</span>
+                <span>{entry.rating}/5</span>
               </span>
             </div>
           </div>
         )}
 
         <div className="p-5">
-          <h3 className="font-serif text-lg font-normal text-zinc-900 transition-colors group-hover:text-emerald-600 dark:text-zinc-100 dark:group-hover:text-emerald-400 sm:text-xl">
+          <h3 className="text-base font-semibold text-zinc-900 transition-colors group-hover:text-emerald-600 dark:text-zinc-100 dark:group-hover:text-emerald-400">
             {entry.title}
           </h3>
-          <p className="mt-1 font-mono text-xs text-zinc-500 dark:text-zinc-400">
+          <p className="mt-1 text-xs text-zinc-500 dark:text-zinc-400">
             {getMediaSubtitle(entry)}
           </p>
           {entry.reviewTitle && (
-            <p className="mt-3 font-serif text-base font-normal leading-snug text-zinc-800 text-balance dark:text-zinc-200 sm:text-lg">
+            <p className="mt-3 text-sm font-medium text-zinc-800 dark:text-zinc-200">
               {entry.reviewTitle}
             </p>
           )}
@@ -98,7 +98,7 @@ export function MediaCard({ entry }: { entry: MediaEntry }) {
           {entry.tags.map((tag) => (
             <li
               key={`${entry.id}-${tag}`}
-              className="rounded-md bg-zinc-100 px-2 py-0.5 font-mono text-xs text-zinc-600 dark:bg-zinc-800 dark:text-zinc-400"
+              className="rounded-md bg-zinc-100 px-2 py-0.5 text-xs text-zinc-600 dark:bg-zinc-800 dark:text-zinc-400"
             >
               {tag}
             </li>
