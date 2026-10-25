@@ -66,7 +66,7 @@ export interface WatchEntry extends BaseMediaEntry {
 
 export interface PlayEntry extends BaseMediaEntry {
   category: 'playing';
-  platform: 'PC' | 'PlayStation' | 'Switch' | 'Other';
+  platform: 'PC' | 'PlayStation' | 'PS5 / PC' | 'Switch' | 'Other';
   developer: string;
   status: 'Completed' | 'In Progress' | 'Endless';
 }

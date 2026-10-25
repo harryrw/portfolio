@@ -18,9 +18,12 @@ export function ResumeView() {
       <section className="rounded-2xl border border-zinc-200 bg-white p-6 shadow-xs transition-all hover:border-emerald-300/80 dark:border-zinc-800 dark:bg-zinc-900 sm:p-10">
         <div className="flex flex-col justify-between gap-6 md:flex-row md:items-start">
           <div className="space-y-3">
-            <h2 className="text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 sm:text-3xl">
+            <p className="text-xs font-semibold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">
+              {siteConfig.pages.about.eyebrow}
+            </p>
+            <h1 className="text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 sm:text-3xl">
               {resumeData.fullName}
-            </h2>
+            </h1>
             <p className="flex items-center gap-2 text-sm text-zinc-500 dark:text-zinc-400">
               <MapPin className="h-4 w-4 text-emerald-600 dark:text-emerald-400" aria-hidden="true" />
               <span>Melbourne, Victoria, Australia</span>

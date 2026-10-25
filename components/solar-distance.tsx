@@ -97,7 +97,7 @@ export function SolarDistance({
         <span className="font-semibold text-zinc-800" suppressHydrationWarning>
           {formattedSunKm} km
         </span>
-        <span className="text-[10px] uppercase tracking-wider text-zinc-400">
+        <span className="text-[10px] uppercase tracking-wider text-zinc-600 dark:text-zinc-400">
           from Sun
         </span>
       </div>
@@ -113,7 +113,7 @@ export function SolarDistance({
         <span className="font-semibold text-zinc-200" suppressHydrationWarning>
           {formattedMoonKm} km
         </span>
-        <span className="text-[10px] uppercase tracking-wider text-zinc-500">
+        <span className="text-[10px] uppercase tracking-wider text-zinc-600 dark:text-zinc-400">
           from Moon
         </span>
       </div>
