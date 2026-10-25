@@ -3,10 +3,11 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu, Wifi, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { siteConfig } from '@/data/site';
 import { ThemeToggle } from '@/components/theme-toggle';
 import { NavToucan } from '@/components/nav-toucan';
+import { SolarDistance } from '@/components/solar-distance';
 
 export function Header() {
   const pathname = usePathname();
@@ -46,33 +47,9 @@ export function Header() {
           </ul>
         </nav>
 
-        {/* Right Corner: Compact Status HUD + Theme Toggle */}
+        {/* Right Corner: Live Earth-Sun Distance + Theme Toggle */}
         <div className="flex items-center gap-2">
-          {/* Mini Corner Telemetry Status Indicator */}
-          <div
-            aria-label="System status"
-            className="hidden items-center gap-2 rounded-lg border border-zinc-200/90 bg-zinc-50/90 px-2.5 py-1 text-xs font-mono shadow-2xs transition-colors dark:border-zinc-800/90 dark:bg-zinc-900/90 sm:inline-flex"
-          >
-            <span className="relative flex h-2 w-2">
-              <span
-                className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"
-                aria-hidden="true"
-              />
-              <span
-                className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500"
-                aria-hidden="true"
-              />
-            </span>
-            <span className="font-medium text-zinc-700 dark:text-zinc-300">
-              Online
-            </span>
-            <span className="text-zinc-300 dark:text-zinc-700">|</span>
-            <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-emerald-700 dark:text-emerald-400">
-              <Wifi className="h-2.5 w-2.5" aria-hidden="true" />
-              <span>200 OK</span>
-            </span>
-          </div>
-
+          <SolarDistance />
           <ThemeToggle />
 
           <button
@@ -128,6 +105,12 @@ export function Header() {
               );
             })}
           </ul>
+
+          {/* Mobile Earth-Sun Live Distance */}
+          <div className="mt-3 flex items-center justify-between border-t border-zinc-100 pt-3 dark:border-zinc-800">
+            <span className="text-xs text-zinc-500 dark:text-zinc-400">Earth to Sun</span>
+            <SolarDistance className="inline-flex" />
+          </div>
         </nav>
       )}
     </header>
