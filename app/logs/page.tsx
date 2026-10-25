@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import type { Metadata } from 'next';
 import { getMediaEntries } from '@/lib/data';
 import { siteConfig } from '@/data/site';
@@ -28,7 +29,9 @@ export default function LogsPage() {
 
       {/* Consumptions Interactive Search & Filter View */}
       <section aria-label="Consumptions archive">
-        <LogsClient initialEntries={entries} />
+        <Suspense fallback={<div className="h-64 animate-pulse rounded-xl bg-zinc-100 dark:bg-zinc-800" />}>
+          <LogsClient initialEntries={entries} />
+        </Suspense>
       </section>
     </div>
   );
