@@ -1,5 +1,6 @@
 import {
   Briefcase,
+  Code2,
   Download,
   ExternalLink,
   GraduationCap,
@@ -105,6 +106,36 @@ export function ResumeView() {
               <p className="mt-1 text-sm text-emerald-700 dark:text-emerald-400">
                 {edu.institution}
               </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Skills & Technologies Section */}
+      <section className="space-y-4" aria-label="Skills and technologies">
+        <h2 className="flex items-center gap-2.5 text-xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">
+          <Code2 className="h-5 w-5 text-emerald-600 dark:text-emerald-400" aria-hidden="true" />
+          <span>{siteConfig.pages.about.skillsTitle}</span>
+        </h2>
+        <div className="grid gap-4 sm:grid-cols-3">
+          {resumeData.skills.map((category) => (
+            <div
+              key={category.title}
+              className="rounded-xl border border-zinc-200 bg-white p-5 shadow-xs transition-all hover:border-emerald-300 dark:border-zinc-800 dark:bg-zinc-900 dark:hover:border-emerald-700/60"
+            >
+              <h3 className="text-sm font-semibold text-zinc-900 dark:text-zinc-100">
+                {category.title}
+              </h3>
+              <ul role="list" className="mt-3 flex flex-wrap gap-1.5">
+                {category.skills.map((skill) => (
+                  <li
+                    key={skill}
+                    className="rounded-md bg-zinc-100 px-2 py-1 text-xs font-medium text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300"
+                  >
+                    {skill}
+                  </li>
+                ))}
+              </ul>
             </div>
           ))}
         </div>

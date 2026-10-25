@@ -8,6 +8,13 @@ import { MediaCard } from '@/components/media-card';
 
 type FilterType = 'all' | MediaCategory;
 
+function getCreator(entry: MediaEntry): string {
+  if (entry.category === 'watching') return entry.director;
+  if (entry.category === 'playing') return entry.developer;
+  if (entry.category === 'listening') return entry.artist;
+  return entry.author;
+}
+
 interface LogsClientProps {
   initialEntries: MediaEntry[];
 }
@@ -19,24 +26,29 @@ export function LogsClient({ initialEntries }: LogsClientProps) {
   const filteredEntries = useMemo(() => {
     const q = searchQuery.trim().toLowerCase();
     return initialEntries.filter((entry) => {
-      const matchesCategory =
-        activeFilter === 'all' || entry.category === activeFilter;
-      const matchesSearch =
-        q === '' ||
-        entry.title.toLowerCase().includes(q) ||
-        (entry.reviewTitle && entry.reviewTitle.toLowerCase().includes(q)) ||
-        entry.tags.some((tag) => tag.toLowerCase().includes(q));
+      if (activeFilter !== 'all' && entry.category !== activeFilter) return false;
+      if (!q) return true;
 
-      return matchesCategory && matchesSearch;
+      const creator = getCreator(entry);
+      const standout =
+        entry.category === 'listening' ? entry.standoutTrack : undefined;
+
+      return (
+        entry.title.toLowerCase().includes(q) ||
+        creator.toLowerCase().includes(q) ||
+        (standout ? standout.toLowerCase().includes(q) : false) ||
+        (entry.reviewTitle ? entry.reviewTitle.toLowerCase().includes(q) : false) ||
+        entry.tags.some((tag) => tag.toLowerCase().includes(q))
+      );
     });
   }, [initialEntries, searchQuery, activeFilter]);
 
-  const filterTabs: { id: FilterType; label: string; icon: typeof Film }[] = [
-    { id: 'all', label: siteConfig.pages.logs.allTab, icon: SlidersHorizontal },
-    { id: 'watching', label: siteConfig.pages.logs.filmsTab, icon: Film },
-    { id: 'playing', label: siteConfig.pages.logs.gamesTab, icon: Gamepad2 },
-    { id: 'reading', label: siteConfig.pages.logs.booksTab, icon: BookOpen },
-    { id: 'listening', label: siteConfig.pages.logs.musicTab, icon: Disc3 },
+  const filterTabs = [
+    { id: 'all' as const, label: siteConfig.pages.logs.allTab, icon: SlidersHorizontal },
+    { id: 'watching' as const, label: siteConfig.pages.logs.filmsTab, icon: Film },
+    { id: 'playing' as const, label: siteConfig.pages.logs.gamesTab, icon: Gamepad2 },
+    { id: 'reading' as const, label: siteConfig.pages.logs.booksTab, icon: BookOpen },
+    { id: 'listening' as const, label: siteConfig.pages.logs.musicTab, icon: Disc3 },
   ];
 
   return (
