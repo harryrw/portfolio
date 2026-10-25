@@ -1,4 +1,4 @@
-import { ExternalLink, FolderGit2 } from 'lucide-react';
+import { ChevronDown, ExternalLink, FolderGit2, Layers } from 'lucide-react';
 import { siteConfig } from '@/data/site';
 import type { Project } from '@/types/portfolio';
 
@@ -79,6 +79,55 @@ export function ProjectCard({ project }: { project: Project }) {
           ))}
         </ul>
       </div>
+
+      {/* Collapsible Architecture & Key Takeaways Drawer */}
+      {(project.architectureOverview || project.takeaways.length > 0) && (
+        <details className="group/details border-t border-zinc-100 dark:border-zinc-800/80">
+          <summary className="flex cursor-pointer items-center justify-between px-6 py-3.5 text-xs font-semibold text-zinc-700 transition-colors hover:bg-zinc-50 hover:text-emerald-700 dark:text-zinc-300 dark:hover:bg-zinc-800/50 dark:hover:text-emerald-400 list-none [&::-webkit-details-marker]:hidden">
+            <span className="inline-flex items-center gap-1.5">
+              <Layers className="h-3.5 w-3.5 text-emerald-600 dark:text-emerald-400" aria-hidden="true" />
+              <span>Architecture &amp; Key Takeaways</span>
+            </span>
+            <ChevronDown className="h-4 w-4 text-zinc-400 transition-transform duration-300 group-open/details:rotate-180" aria-hidden="true" />
+          </summary>
+          <div className="space-y-4 border-t border-zinc-100 bg-zinc-50/50 px-6 py-4 text-xs dark:border-zinc-800/60 dark:bg-zinc-950/40">
+            {project.architectureOverview && (
+              <div className="space-y-1.5">
+                <span className="font-semibold uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
+                  System Architecture
+                </span>
+                <p className="leading-relaxed text-zinc-600 dark:text-zinc-400">
+                  {project.architectureOverview}
+                </p>
+              </div>
+            )}
+            {project.takeaways.length > 0 && (
+              <div className="space-y-2">
+                <span className="font-semibold uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
+                  Engineering Challenges &amp; Solutions
+                </span>
+                <div className="space-y-2">
+                  {project.takeaways.map((takeaway, idx) => (
+                    <div
+                      key={idx}
+                      className="rounded-lg border border-zinc-200/80 bg-white p-3 shadow-2xs dark:border-zinc-800 dark:bg-zinc-900"
+                    >
+                      <p className="leading-relaxed text-zinc-700 dark:text-zinc-300">
+                        <strong className="text-rose-600 dark:text-rose-400">Challenge: </strong>
+                        {takeaway.challenge}
+                      </p>
+                      <p className="mt-1.5 leading-relaxed text-zinc-700 dark:text-zinc-300">
+                        <strong className="text-emerald-600 dark:text-emerald-400">Solution: </strong>
+                        {takeaway.solution}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        </details>
+      )}
     </li>
   );
 }
